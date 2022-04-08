@@ -2,20 +2,37 @@
   display: flex;
   flex-direction: column;
   width: 15em;
-  background-color: gray;
+  background-color: #2F404F;
 }
 
 .sidebar-element{
   display: flex;
   flex-direction: row;
-  height: 8em;
+  height: 6em;
   align-content: stretch;
   align-items: center;
+  margin: 0.5em;
   
 }
 
+.sidebar-element-text{
+  font-family: 'Montserrat', sans-serif;
+  color: #C7DAD3;
+  font-size: 1.5em;
+}
+
 .icon{
-  height: 5em;
-  width: 5em;
-  margin:1em;
+  font-size: 3em;
+  margin-left: 1rem;
+  margin-right: 0.2em;
+  color: #C7DAD3;
+}
+
+.divider {
+  margin-left: 1rem;
+  width: 12em;
+  height: 0.2em;
+  
+  background-color: #636363;
+  overflow: hidden;
 }
