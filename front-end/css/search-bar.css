@@ -4,9 +4,8 @@
 
 .right-section {
   flex: 1;
-  margin-left: 70px;
-  margin-right: 70px;
   max-width: 500px;
+  margin-right: 2rem;
   display: flex;
   align-items: center;
 }

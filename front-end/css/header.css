@@ -1,26 +1,18 @@
 /* left section -> от flexbox-a лявата му част, която държи заглавието в случая */
-.left-section {
-  display: flex;
-  align-items: center;
-}
+
 
 /* header styles */
 .header {
-  height: 70px;
-
+  height: 5rem;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-
   background-color: white;
   border-bottom: 4mm ridge rgba(211, 220, 50, 0.6);
+  flex-wrap: wrap;
+  align-content: space-around;
+  justify-content: space-between;
+  align-items: stretch;
+  background-color: green;
 }
 
 /* h1 styles -> site name*/
@@ -40,5 +32,5 @@
   background-clip: text;
   -webkit-background-clip: text;
 
-  margin-left: 70px;
+
 }

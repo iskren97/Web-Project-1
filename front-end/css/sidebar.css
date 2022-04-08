@@ -1,45 +1,21 @@
-.sidebar {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  top: 5px;
-  background-color: white;
-  width: 150px;
-  /* z-index: 200; */
-  padding-top: 100px;
-}
-
-.sidebar-link {
-  height: 45px;
+.sidebar{
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-  cursor: pointer;
+  width: 15em;
+  background-color: gray;
 }
 
-.sidebar-link:hover {
-  background-color: rgb(235, 235, 235);
-}
-
-.sidebar-link img {
-  height: 22px;
-  margin-bottom: 4px;
-}
-
-.sidebar-link div {
-  font-size: 10px;
-}
-
-.sidebar-grid {
-  /* margin-top: 15px; */
-  display: grid;
-  grid-template-columns: 30px 30px 30px;
-  column-gap: 10px;
+.sidebar-element{
+  display: flex;
+  flex-direction: row;
+  height: 8em;
+  align-content: stretch;
   align-items: center;
+  
 }
 
-.sidebar-text {
-  font: bold 15px 'lucida sans', 'trebuchet MS', 'Tahoma';
-  color: purple;
+.icon{
+  height: 5em;
+  width: 5em;
+  margin:1em;
 }
