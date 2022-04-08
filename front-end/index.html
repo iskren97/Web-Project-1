@@ -1,12 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  IT'S ALIVE
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- styles of different areas -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="header.css" />
+    <link rel="stylesheet" href="search-bar.css" />
+    <link rel="stylesheet" href="search-button.css" />
+    <link rel="stylesheet" href="sidebar.css" />
+    <!--  -->
+
+    <title>Demo</title>
+  </head>
+  <body>
+    <div class="header">
+      <div class="left-section">
+        <h1>GiFHub &#183;</h1>
+      </div>
+      <div class="right-section">
+        <input
+          class="search-bar"
+          type="text"
+          placeholder="Search gif here..."
+          required
+        />
+        <button class="search-button">
+          <div class="tooltip">Search</div>
+        </button>
+      </div>
+    </div>
+
+    <nav class="sidebar">
+      <div class="sidebar-grid">
+        <div class="sidebar-link">
+          <img src="icons/home.png" />
+        </div>
+
+        <div>
+          <p class="sidebar-text">Home</p>
+        </div>
+      </div>
+
+      <div class="sidebar-grid">
+        <div class="sidebar-link">
+          <img src="icons/home.png" />
+        </div>
+
+        <div>
+          <p class="sidebar-text">Trending</p>
+        </div>
+      </div>
+
+      <div class="sidebar-grid">
+        <div class="sidebar-link">
+          <img src="icons/home.png" />
+        </div>
+        <div>
+          <p class="sidebar-text">Favorites</p>
+        </div>
+      </div>
+
+      <div class="sidebar-grid">
+        <div class="sidebar-link">
+          <img src="icons/home.png" />
+        </div>
+        <div>
+          <p class="sidebar-text">Uploads</p>
+        </div>
+      </div>
+    </nav>
+  </body>
 </html>
