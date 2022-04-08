@@ -7,6 +7,8 @@
 
 /* header styles */
 .header {
+  padding-top: 15px;
+  padding-bottom: 30px;
   height: 5rem;
 
   display: flex;
@@ -16,7 +18,6 @@
 
   flex-direction: row;
   background-color: white;
-  border-bottom: 4mm ridge rgb(199, 218, 211);
 
   background-color: white;
 }
@@ -24,8 +25,10 @@
 /* h1 styles -> site name*/
 .header h1 {
   /* vw === ViewPoint, resize-ва се при промяна page-a, което прави самия текст responsive */
-  font-size: 3.5vw;
+  font-size: 4vw;
 
+  font-family: 'Rubik Glitch', cursive;
+  font-weight: normal;
   margin: 0;
   /* тук надолу са цветовете на заглавието */
   color: rgb(47, 64, 79);

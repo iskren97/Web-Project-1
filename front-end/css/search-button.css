@@ -5,16 +5,18 @@
   align-items: center;
   position: relative;
 
-  border: 0px;
   cursor: pointer;
   height: 40px;
   width: 110px;
-  font: bold 15px/40px 'lucida sans', 'trebuchet MS', 'Tahoma';
+  border: none;
+
+  font-size: 16px;
+  font-family: 'Rubik Wet Paint', cursive;
+  font-weight: normal;
+
   color: #fff;
   text-transform: uppercase;
   background-color: rgb(47, 64, 79);
-  border-radius: 0 3px 3px 0;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
 }
 
 .search-button:hover {
@@ -27,15 +29,6 @@
   outline: 0;
 }
 
-.search-button:before {
-  /* left arrow */
-  content: '';
-  position: relative;
-  border-width: 8px 8px 8px 0;
-  border-style: solid solid solid none;
-  border-color: transparent rgb(199, 218, 211) transparent;
-}
-
 .search-button:hover:before {
   border-right-color: #e54040;
 }
@@ -43,8 +36,4 @@
 .search-button:focus:before,
 .search-button:active:before {
   border-right-color: #c42f2f;
-}
-
-.search-button::-moz-focus-inner {
-  /* remove extra button spacing for Mozilla Firefox */
 }
