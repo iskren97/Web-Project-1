@@ -1,0 +1,56 @@
+/* right-section ->
+ от flexbox-a дясната част, която държи search bara и search бутона 
+ */
+
+.right-section {
+  flex: 1;
+  margin-left: 70px;
+  margin-right: 70px;
+  max-width: 500px;
+  display: flex;
+  align-items: center;
+}
+
+/* search-bar styles */
+.search-bar {
+  flex: 1;
+  width: 0;
+  height: 20px;
+  padding: 10px 5px;
+  float: left;
+  font: bold 15px 'lucida sans', 'trebuchet MS', 'Tahoma';
+  border: none;
+  background: #eee;
+  border-radius: 3px 0 0 3px;
+}
+
+/* тук променям самия текс в бара как да изглежда */
+input[type='text']::placeholder {
+  text-align: left;
+  font-size: 13.5px;
+}
+
+/* това е когато цъкнем на полето за търсене */
+.search-bar:focus {
+  outline: 0;
+  background: #fff;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.8) inset;
+}
+
+.search-bar::-webkit-input-placeholder {
+  color: #999;
+  font-weight: normal;
+  font-style: italic;
+}
+
+.search-bar:-moz-placeholder {
+  color: #999;
+  font-weight: normal;
+  font-style: italic;
+}
+
+.search-bar:-ms-input-placeholder {
+  color: #999;
+  font-weight: normal;
+  font-style: italic;
+}

@@ -1,0 +1,61 @@
+/* search button styles */
+.search-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  height: 40px;
+  width: 110px;
+  font: bold 15px/40px 'lucida sans', 'trebuchet MS', 'Tahoma';
+  color: #fff;
+  text-transform: uppercase;
+  background-image: conic-gradient(
+    #553c9a 30%,
+    #ee4b2b 40%,
+    #ee4b2b 70%,
+    #00c2cb 80%,
+    #553c9a
+  );
+  border-radius: 0 3px 3px 0;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+}
+
+.search-button:hover {
+  background-image: linear-gradient(to left, #553c9a, #b393d3);
+}
+
+.search-button:active,
+.search-button:focus {
+  background: #c42f2f;
+  outline: 0;
+}
+
+.search-button:before {
+  /* left arrow */
+  content: '';
+  position: absolute;
+  border-width: 8px 8px 8px 0;
+  border-style: solid solid solid none;
+  border-color: transparent #d83c3c transparent;
+  top: 12px;
+  left: -6px;
+}
+
+.search-button:hover:before {
+  border-right-color: #e54040;
+}
+
+.search-button:focus:before,
+.search-button:active:before {
+  border-right-color: #c42f2f;
+}
+
+.search-button::-moz-focus-inner {
+  /* remove extra button spacing for Mozilla Firefox */
+  border: 0;
+  padding: 0;
+}
