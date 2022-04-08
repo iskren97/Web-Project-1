@@ -1,18 +1,24 @@
 /* left section -> от flexbox-a лявата му част, която държи заглавието в случая */
 
+.left-section {
+  margin-right: 2rem;
+  margin-left: 2rem;
+}
 
 /* header styles */
 .header {
   height: 5rem;
+
   display: flex;
-  flex-direction: row;
-  background-color: white;
-  border-bottom: 4mm ridge rgba(211, 220, 50, 0.6);
-  flex-wrap: wrap;
   align-content: space-around;
   justify-content: space-between;
-  align-items: stretch;
-  background-color: green;
+  align-items: center;
+
+  flex-direction: row;
+  background-color: white;
+  border-bottom: 4mm ridge rgb(199, 218, 211);
+
+  background-color: white;
 }
 
 /* h1 styles -> site name*/
@@ -20,17 +26,7 @@
   /* vw === ViewPoint, resize-ва се при промяна page-a, което прави самия текст responsive */
   font-size: 3.5vw;
 
+  margin: 0;
   /* тук надолу са цветовете на заглавието */
-  background-image: conic-gradient(
-    #553c9a 30%,
-    #ee4b2b 40%,
-    #ee4b2b 70%,
-    #00c2cb 80%,
-    #553c9a
-  );
-  color: transparent;
-  background-clip: text;
-  -webkit-background-clip: text;
-
-
+  color: rgb(47, 64, 79);
 }
