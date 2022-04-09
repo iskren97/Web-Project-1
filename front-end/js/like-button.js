@@ -1,4 +1,4 @@
-const gifThumbnails = document.querySelectorAll('.gif-thumbnail');
+const gifThumbnails = document.querySelectorAll('.gif-preview');
 
 Array.from(gifThumbnails).forEach((el) => {
   const likeBtn = el.children[1];
