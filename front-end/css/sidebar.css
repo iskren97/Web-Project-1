@@ -1,21 +1,71 @@
 .sidebar{
   display: flex;
   flex-direction: column;
-  width: 15em;
-  background-color: gray;
+  width: 7em;
+  background-color: #2F404F;
+  transition: all 0.5s ease;
+  overflow: hidden;
+}
+.active{
+  
+  width: 20em;
+
 }
 
+
+
 .sidebar-element{
-  display: flex;
+
+  display:flex;
   flex-direction: row;
-  height: 8em;
+  height: 6em;
   align-content: stretch;
   align-items: center;
-  
+  margin: 0.5em;
+  overflow: hidden;
+}
+
+.sidebar-element-text{
+  display: block;
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+.sidebar.active .sidebar-element-text{
+  font-family: 'Montserrat', sans-serif;
+  color: #C7DAD3;
+  font-size: 1.5em;
+  display: flex;
+  margin-left: 1.5em;
+  opacity: 1;
+  transition: .75s ease;
+}
+
+
+#btn{
+  background-color: rgba(255,255,255,0);
+  border-color: rgba(255,255,255,0);
 }
 
 .icon{
-  height: 5em;
-  width: 5em;
-  margin:1em;
+  position:relative;
+  font-size: 3em;
+  display: block;
+  margin-left: 1rem;
+  margin-right: 0.2em;
+  color: #C7DAD3;
+  min-width: 10px;
+}
+
+.divider {
+  margin-left: 1rem;
+  width: 70%;
+  height: 0.2em;
+  
+  background-color: #636363;
+  overflow: hidden;
+}
+
+.sidebar.active .divider{
+  width: 85%;
 }
