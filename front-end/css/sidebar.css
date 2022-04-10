@@ -72,7 +72,18 @@
   transition: 0.75s ease;
 }
 
+.svgIcon{
+  width: 1.5em;
+  height: 1.5em;
+  transition: 0.75s ease;
+  filter: invert(93%) sepia(12%) saturate(197%) hue-rotate(106deg) brightness(92%) contrast(88%);
+}
 
+.sidebar-element:hover * .svgIcon {
+  color: #2F404F;
+  transition: 0.75s ease;
+  filter: invert(19%) sepia(7%) saturate(2683%) hue-rotate(167deg) brightness(98%) contrast(82%);
+}
 
 
 .divider {
