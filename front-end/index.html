@@ -60,15 +60,20 @@
   </head>
   <body>
     <div class="container">
+
       <div class="sidebar">
-        <div class="sidebar-element">
-          <button id="btn">
+
+        <div class="sidebar-element" id="toggle-button">
+          <div id="hamburger-btn">
             <div class="icon">
               <i class="fa fa-fw fa-bars"></i>
             </div>
-          </button>
+          </div>
         </div>
-        <div class="divider"></div>
+
+        <div class="divider">
+          <div class="line"></div>
+        </div>
 
         <div class="sidebar-element">
           <div class="icon">
@@ -98,7 +103,9 @@
           <p class="sidebar-element-text">My Uploads</p>
         </div>
 
-        <div class="divider"></div>
+        <div class="divider">
+          <div class="line"></div>
+        </div>
 
         <div class="sidebar-element">
           <div class="icon">
@@ -107,11 +114,16 @@
           <p class="sidebar-element-text">Upload a GIF</p>
         </div>
 
-        <div class="divider"></div>
+        <div class="divider">
+          <div class="line"></div>
+        </div>
 
-        <div class="sidebar-element">
+        <div class="sidebar-element" id="darkModeToggle">
           <div class="icon">
-            <i class="fa fa-toggle-on"></i>
+            <label class="toggle">
+              <input type="checkbox" id="darkModeCheckbox"/>
+              <span class="slider"></span>
+            </label>
           </div>
           <p class="sidebar-element-text">Dark Mode</p>
         </div>
