@@ -56,4 +56,6 @@
 
   overflow: hidden;
   border-bottom: dashed;
+
+  transition: opacity 0.15s;
 }
