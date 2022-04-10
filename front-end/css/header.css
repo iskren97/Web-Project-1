@@ -2,13 +2,17 @@
 
 /* header styles */
 .header {
-  padding-top: 15px;
-  padding-bottom: 30px;
+  padding-top: 20px;
+  padding-bottom: 15px;
   height: 5rem;
+
+  margin-left: 5rem;
+  margin-right: 5rem;
 
   display: flex;
   align-content: space-around;
-  justify-content: space-around;
+  justify-content: space-between;
+
   align-items: center;
 
   flex-direction: row;
@@ -41,4 +45,15 @@
     margin-left: 0%;
     width: 100%;
   }
+}
+
+.border-bottom {
+  margin-left: 2rem;
+  margin-right: 2rem;
+
+  border-bottom: dashed;
+  border-color: white;
+
+  overflow: hidden;
+  border-bottom: dashed;
 }

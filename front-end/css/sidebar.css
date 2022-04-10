@@ -60,7 +60,9 @@
   width: 70%;
   height: 0.2em;
 
-  background-color: #636363;
+  border-bottom: dashed;
+  border-color: white;
+
   overflow: hidden;
 }
 
