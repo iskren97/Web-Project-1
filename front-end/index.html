@@ -18,9 +18,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
       rel="stylesheet"
     />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Text&display=swap"
+      rel="stylesheet"
+    />
+
     <!--  -->
 
     <!-- styles of different areas -->
@@ -32,6 +40,7 @@
     <!--  -->
 
     <!-- ICONS -->
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -51,9 +60,7 @@
   </head>
   <body>
     <div class="container">
-
       <div class="sidebar">
-
         <div class="sidebar-element" id="toggle-button">
           <div id="hamburger-btn">
             <div class="icon">
@@ -119,7 +126,7 @@
         <div class="sidebar-element" id="darkModeToggle">
           <div class="icon">
             <label class="toggle">
-              <input type="checkbox" id="darkModeCheckbox"/>
+              <input type="checkbox" id="darkModeCheckbox" />
               <span class="slider"></span>
             </label>
           </div>
@@ -128,6 +135,7 @@
       </div>
 
       <div class="content">
+        <!-- holding site name, search bar, search button -->
         <div class="header">
           <div class="left-section">
             <h1>GiFHub &#183;</h1>
@@ -144,9 +152,226 @@
             </button>
           </div>
         </div>
-        <div>EVERYTHING ELSE</div>
+
+        <div class="border-bottom" onscroll="hideBorder()"></div>
+
+        <!-- holding gif sections -->
+        <main class="main" style="overflow: scroll">
+          <h1 class="gif-category">Editors picks:</h1>
+
+          <!-- section Editors picks: -->
+          <section class="gif-grid">
+            <div class="gif-preview">
+              <img class="thumbnail" src="icons/giphy.gif" alt="" />
+              <button class="like-btn">
+                <i class="fa fa-fw fa-heart"></i>
+              </button>
+            </div>
+
+            <div class="gif-preview">
+              <img class="thumbnail" src="icons/giphy.gif" alt="" />
+              <button class="like-btn">
+                <i class="fa fa-fw fa-heart"></i>
+              </button>
+            </div>
+
+            <div class="gif-preview">
+              <img class="thumbnail" src="icons/giphy.gif" />
+              <button class="like-btn">
+                <i class="fa fa-fw fa-heart"></i>
+              </button>
+            </div>
+
+            <div class="gif-preview">
+              <img class="thumbnail" src="icons/giphy.gif" alt="" />
+              <button class="like-btn">
+                <i class="fa fa-fw fa-heart"></i>
+              </button>
+            </div>
+
+            <div class="gif-preview">
+              <img class="thumbnail" src="icons/giphy.gif" alt="" />
+              <button class="like-btn">
+                <i class="fa fa-fw fa-heart"></i>
+              </button>
+            </div>
+
+            <div class="gif-preview">
+              <img class="thumbnail" src="icons/giphy.gif" alt="" />
+              <button class="like-btn">
+                <i class="fa fa-fw fa-heart"></i>
+              </button>
+            </div>
+
+            <div class="gif-preview">
+              <img class="thumbnail" src="icons/giphy.gif" alt="" />
+              <button class="like-btn">
+                <i class="fa fa-fw fa-heart"></i>
+              </button>
+            </div>
+          </section>
+
+          <h1 class="gif-category">Trending:</h1>
+
+          <section class="gif-grid">
+            <div class="gif-preview">
+              <img class="thumbnail" src="icons/giphy.gif" alt="" />
+              <button class="like-btn">
+                <i class="fa fa-fw fa-heart"></i>
+              </button>
+            </div>
+
+            <div class="gif-preview">
+              <img class="thumbnail" src="icons/giphy.gif" alt="" />
+              <button class="like-btn">
+                <i class="fa fa-fw fa-heart"></i>
+              </button>
+            </div>
+
+            <div class="gif-preview">
+              <img class="thumbnail" src="icons/giphy.gif" />
+              <button class="like-btn">
+                <i class="fa fa-fw fa-heart"></i>
+              </button>
+            </div>
+
+            <div class="gif-preview">
+              <img class="thumbnail" src="icons/giphy.gif" alt="" />
+              <button class="like-btn">
+                <i class="fa fa-fw fa-heart"></i>
+              </button>
+            </div>
+
+            <div class="gif-preview">
+              <img class="thumbnail" src="icons/giphy.gif" alt="" />
+              <button class="like-btn">
+                <i class="fa fa-fw fa-heart"></i>
+              </button>
+            </div>
+
+            <div class="gif-preview">
+              <img class="thumbnail" src="icons/giphy.gif" alt="" />
+              <button class="like-btn">
+                <i class="fa fa-fw fa-heart"></i>
+              </button>
+            </div>
+
+            <div class="gif-preview">
+              <img class="thumbnail" src="icons/giphy.gif" alt="" />
+              <button class="like-btn">
+                <i class="fa fa-fw fa-heart"></i>
+              </button>
+            </div>
+          </section>
+
+          <h1 class="gif-category">Favorites:</h1>
+          <section class="gif-grid">
+            <div class="gif-preview">
+              <img class="thumbnail" src="icons/giphy.gif" alt="" />
+              <button class="like-btn">
+                <i class="fa fa-fw fa-heart"></i>
+              </button>
+            </div>
+
+            <div class="gif-preview">
+              <img class="thumbnail" src="icons/giphy.gif" alt="" />
+              <button class="like-btn">
+                <i class="fa fa-fw fa-heart"></i>
+              </button>
+            </div>
+
+            <div class="gif-preview">
+              <img class="thumbnail" src="icons/giphy.gif" />
+              <button class="like-btn">
+                <i class="fa fa-fw fa-heart"></i>
+              </button>
+            </div>
+
+            <div class="gif-preview">
+              <img class="thumbnail" src="icons/giphy.gif" alt="" />
+              <button class="like-btn">
+                <i class="fa fa-fw fa-heart"></i>
+              </button>
+            </div>
+
+            <div class="gif-preview">
+              <img class="thumbnail" src="icons/giphy.gif" alt="" />
+              <button class="like-btn">
+                <i class="fa fa-fw fa-heart"></i>
+              </button>
+            </div>
+
+            <div class="gif-preview">
+              <img class="thumbnail" src="icons/giphy.gif" alt="" />
+              <button class="like-btn">
+                <i class="fa fa-fw fa-heart"></i>
+              </button>
+            </div>
+
+            <div class="gif-preview">
+              <img class="thumbnail" src="icons/giphy.gif" alt="" />
+              <button class="like-btn">
+                <i class="fa fa-fw fa-heart"></i>
+              </button>
+            </div>
+          </section>
+
+          <h1 class="gif-category">Uploads:</h1>
+          <section class="gif-grid">
+            <div class="gif-preview">
+              <img class="thumbnail" src="icons/giphy.gif" alt="" />
+              <button class="like-btn">
+                <i class="fa fa-fw fa-heart"></i>
+              </button>
+            </div>
+
+            <div class="gif-preview">
+              <img class="thumbnail" src="icons/giphy.gif" alt="" />
+              <button class="like-btn">
+                <i class="fa fa-fw fa-heart"></i>
+              </button>
+            </div>
+
+            <div class="gif-preview">
+              <img class="thumbnail" src="icons/giphy.gif" />
+              <button class="like-btn">
+                <i class="fa fa-fw fa-heart"></i>
+              </button>
+            </div>
+
+            <div class="gif-preview">
+              <img class="thumbnail" src="icons/giphy.gif" alt="" />
+              <button class="like-btn">
+                <i class="fa fa-fw fa-heart"></i>
+              </button>
+            </div>
+
+            <div class="gif-preview">
+              <img class="thumbnail" src="icons/giphy.gif" alt="" />
+              <button class="like-btn">
+                <i class="fa fa-fw fa-heart"></i>
+              </button>
+            </div>
+
+            <div class="gif-preview">
+              <img class="thumbnail" src="icons/giphy.gif" alt="" />
+              <button class="like-btn">
+                <i class="fa fa-fw fa-heart"></i>
+              </button>
+            </div>
+
+            <div class="gif-preview">
+              <img class="thumbnail" src="icons/giphy.gif" alt="" />
+              <button class="like-btn">
+                <i class="fa fa-fw fa-heart"></i>
+              </button>
+            </div>
+          </section>
+        </main>
       </div>
     </div>
     <script src="./js/sidebar.js"></script>
+    <script src="js/like-button.js"></script>
+    <script src="js/header-border.js"></script>
   </body>
 </html>
