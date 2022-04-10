@@ -4,8 +4,7 @@
 
 .right-section {
   flex: 1;
-  max-width: 500px;
-  margin-right: 2rem;
+  max-width: 550px;
   display: flex;
   align-items: center;
 }
@@ -14,8 +13,7 @@
 .search-bar {
   flex: 1;
   width: 0;
-  height: 20px;
-  padding: 10px 5px;
+  padding: 18px;
   float: left;
   font: bold 15px 'lucida sans', 'trebuchet MS', 'Tahoma';
   border: none;

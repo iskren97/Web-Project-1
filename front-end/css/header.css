@@ -1,10 +1,5 @@
 /* left section -> от flexbox-a лявата му част, която държи заглавието в случая */
 
-.left-section {
-  margin-right: 2rem;
-  margin-left: 2rem;
-}
-
 /* header styles */
 .header {
   padding-top: 15px;
