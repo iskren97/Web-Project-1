@@ -1,8 +1,8 @@
-.sidebar{
+.sidebar {
   display: flex;
   flex-direction: column;
-  width: 6em;
-  background-color: #2F404F;
+  width: 7em;
+  background-color: #2f404f;
   transition: all 0.5s ease;
   overflow: hidden;
 
@@ -47,12 +47,17 @@
   overflow: hidden;
 }
 
-.sidebar.active .sidebar-element-text{
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.5em;
+.sidebar.active .sidebar-element-text {
+  /* font-family: 'Montserrat', sans-serif; */
+  font-family: 'Press Start 2P', cursive;
+  font-weight: normal;
+
+  color: #c7dad3;
+  font-size: 1em;
+  /* font-size: 1.5em; */
   display: flex;
   opacity: 1;
-  transition: .75s ease;
+  transition: 0.75s ease;
 }
 
 

@@ -1,19 +1,18 @@
 /* left section -> от flexbox-a лявата му част, която държи заглавието в случая */
 
-.left-section {
-  margin-right: 2rem;
-  margin-left: 2rem;
-}
-
 /* header styles */
 .header {
-  padding-top: 15px;
-  padding-bottom: 30px;
+  padding-top: 20px;
+  padding-bottom: 15px;
   height: 5rem;
+
+  margin-left: 5rem;
+  margin-right: 5rem;
 
   display: flex;
   align-content: space-around;
   justify-content: space-between;
+
   align-items: center;
 
   flex-direction: row;
@@ -25,11 +24,36 @@
 /* h1 styles -> site name*/
 .header h1 {
   /* vw === ViewPoint, resize-ва се при промяна page-a, което прави самия текст responsive */
-  font-size: 4vw;
-
-  font-family: 'Rubik Glitch', cursive;
+  font-size: 3.5vw;
+  font-family: 'Press Start 2P', cursive;
   font-weight: normal;
   margin: 0;
   /* тук надолу са цветовете на заглавието */
   color: rgb(47, 64, 79);
+
+  animation-duration: 3s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 60%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+.border-bottom {
+  margin-left: 2rem;
+  margin-right: 2rem;
+
+  border-bottom: dashed;
+  border-color: white;
+
+  overflow: hidden;
+  border-bottom: dashed;
 }
