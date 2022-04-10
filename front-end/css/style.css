@@ -2,8 +2,13 @@
 
 body {
   /* This style below will be inherited */
-
+  
   margin: 0;
+}
+
+:root{
+  --font-color-light: #C7DAD3; 
+  --background-color-light: #2F404F;
 }
 
 .container {
@@ -18,3 +23,5 @@ body {
   flex-direction: column;
   flex-grow: 1;
 }
+
+

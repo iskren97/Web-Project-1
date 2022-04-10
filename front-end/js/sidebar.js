@@ -4,6 +4,8 @@ let sidebarElements = Array.from(document.querySelectorAll(".sidebar-element"))
 
 let darkModeButton = document.querySelector("#darkModeToggle")
 
+let toggleButton = document.querySelector("#darkModeCheckbox")
+
 
 
 sidebarElements.map(e=>{
@@ -18,6 +20,7 @@ sidebarElements.map(e=>{
 
 
 
+
 darkModeButton.addEventListener("click", function(){
 
   let button = document.querySelector("#darkModeCheckbox")
@@ -26,6 +29,15 @@ darkModeButton.addEventListener("click", function(){
     button.checked = false;
   }else{
     button.checked = true;
+  }
+
+
+  var r = document.querySelector(':root');
+
+  if(button.checked){
+    r.style.setProperty('--font-color-light', 'green');
+  }else{
+    r.style.setProperty('--font-color-light', '#C7DAD3');
   }
 
   

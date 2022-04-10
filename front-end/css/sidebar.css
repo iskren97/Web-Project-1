@@ -1,8 +1,10 @@
+@import "style.css";
+
 .sidebar{
   display: flex;
   flex-direction: column;
   width: 6em;
-  background-color: #2F404F;
+  background-color: var(--background-color-light);
   transition: all 0.5s ease;
   overflow: hidden;
 
@@ -28,12 +30,12 @@
 }
 
 .sidebar-element:hover * {
-  color: #2F404F;
+  color: var(--background-color-light);
   transition: 0.75s ease;
 }
 
 .sidebar-element:hover {
-  background-color: #C7DAD3;
+  background-color: var(--font-color-light);
   transition: 0.75s ease;
 }
 
@@ -42,7 +44,7 @@
 .sidebar-element-text{
   display: block;
   opacity: 0;
-  color: #C7DAD3;
+  color: var(--font-color-light);
   transition: 0.3s ease;
   overflow: hidden;
 }
@@ -67,7 +69,7 @@
   display: block;
   margin-left: 1rem;
   margin-right: 0.2em;
-  color: #C7DAD3;
+  color: var(--font-color-light);
   width: 2em;
   transition: 0.75s ease;
 }
@@ -105,12 +107,6 @@
 .sidebar.active .line{
   width: 85%;
   transition: 0.75s ease;
-}
-
-.bi-heart{
-  color: #C7DAD3;
-  width: 2rem;
-  height: 2rem;
 }
 
 
