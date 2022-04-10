@@ -7,7 +7,6 @@
   background-color: var(--background-color-light);
   transition: all 0.5s ease;
   overflow: hidden;
-
 }
 .active{
   width: 20em;
@@ -47,6 +46,7 @@
   color: var(--font-color-light);
   transition: 0.3s ease;
   overflow: hidden;
+  transition-delay:0s;
 }
 
 .sidebar.active .sidebar-element-text{
@@ -55,6 +55,7 @@
   display: flex;
   opacity: 1;
   transition: .75s ease;
+  transition-delay:0.1s;
 }
 
 

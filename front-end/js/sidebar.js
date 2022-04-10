@@ -3,9 +3,9 @@ let sidebar = document.querySelector(".sidebar");
 let sidebarElements = Array.from(document.querySelectorAll(".sidebar-element"))
 
 let darkModeButton = document.querySelector("#darkModeToggle")
-
 let toggleButton = document.querySelector("#darkModeCheckbox")
 
+let main = document.querySelector(".main")
 
 
 sidebarElements.map(e=>{
@@ -18,7 +18,9 @@ sidebarElements.map(e=>{
 })
 
 
-
+main.addEventListener("click", function(){
+    sidebar.classList.remove("active")
+})
 
 
 darkModeButton.addEventListener("click", function(){
