@@ -30,7 +30,7 @@ input[type='text']::placeholder {
 .search-bar:focus {
   outline: 0;
   background: #fff;
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.8) inset;
+  box-shadow: 0 0 1.5px rgba(0, 0, 0, 0.8) inset;
 }
 
 .search-bar::-webkit-input-placeholder {
