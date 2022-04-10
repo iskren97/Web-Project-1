@@ -2,6 +2,8 @@ let btn = document.querySelector("#hamburger-btn");
 let sidebar = document.querySelector(".sidebar");
 let sidebarElements = Array.from(document.querySelectorAll(".sidebar-element"))
 
+let darkModeButton = document.querySelector("#darkModeToggle")
+
 
 
 sidebarElements.map(e=>{
@@ -13,6 +15,21 @@ sidebarElements.map(e=>{
 
 })
 
+
+
+
+darkModeButton.addEventListener("click", function(){
+
+  let button = document.querySelector("#darkModeCheckbox")
+  
+  if(button.checked){
+    button.checked = false;
+  }else{
+    button.checked = true;
+  }
+
+  
+})
 
 
 
