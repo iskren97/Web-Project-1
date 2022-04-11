@@ -1,3 +1,8 @@
+import { homeView} from "../views/home-view.js"
+import { trendingView} from "../views/trending-view.js"
+import { uploadsView} from "../views/uploads-view.js"
+import { favoritesView} from "../views/favorites-view.js"
+
 let btn = document.querySelector("#hamburger-btn");
 let sidebar = document.querySelector(".sidebar");
 let sidebarElements = Array.from(document.querySelectorAll(".sidebar-element"))
@@ -10,6 +15,20 @@ sidebarElements.map(e=>{
     e.addEventListener("click", function(){
         if(e?.attributes[1]?.nodeValue == "toggle-button"){
         sidebar.classList.toggle("active")
+        }
+
+        if(e?.attributes[1]?.nodeValue == "trendingId"){
+          trendingView();
+        }
+
+        if(e?.attributes[1]?.nodeValue == "homeId"){
+          homeView();
+        }
+        if(e?.attributes[1]?.nodeValue == "favoritesId"){
+          favoritesView();
+        }
+        if(e?.attributes[1]?.nodeValue == "myUploadsId"){
+          uploadsView();
         }
     })
 
