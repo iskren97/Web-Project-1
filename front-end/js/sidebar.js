@@ -1,10 +1,8 @@
 let btn = document.querySelector("#hamburger-btn");
 let sidebar = document.querySelector(".sidebar");
 let sidebarElements = Array.from(document.querySelectorAll(".sidebar-element"))
-
 let darkModeButton = document.querySelector("#darkModeToggle")
 let toggleButton = document.querySelector("#darkModeCheckbox")
-
 let main = document.querySelector(".main")
 
 
@@ -33,16 +31,14 @@ darkModeButton.addEventListener("click", function(){
     button.checked = true;
   }
 
-
   var r = document.querySelector(':root');
 
+  
   if(button.checked){
     r.style.setProperty('--font-color-light', 'green');
   }else{
     r.style.setProperty('--font-color-light', '#C7DAD3');
   }
-
-  
 })
 
 

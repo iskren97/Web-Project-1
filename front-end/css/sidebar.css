@@ -28,14 +28,18 @@
   border-radius: 0.5rem;
 }
 
+#toggle-button{
+ height: 5rem;
+}
+
 .sidebar-element:hover * {
   color: var(--background-color-light);
-  transition: 0.75s ease;
+  transition: 0.25s ease;
 }
 
 .sidebar-element:hover {
   background-color: var(--font-color-light);
-  transition: 0.75s ease;
+  transition: 0.25s ease;
 }
 
 
@@ -43,10 +47,13 @@
 .sidebar-element-text{
   display: block;
   opacity: 0;
+  font-family: 'Press Start 2P', cursive;
+  font-weight: normal;
+  font-size: 1em;
   color: var(--font-color-light);
-  transition: 0.3s ease;
   overflow: hidden;
-  transition-delay:0s;
+  transition: 0.25s ease;
+  transition-delay: 0s;
 }
 
 .sidebar.active .sidebar-element-text {
@@ -57,8 +64,8 @@
   /* font-size: 1.5em; */
   display: flex;
   opacity: 1;
-  transition: .75s ease;
-  transition-delay:0.1s;
+  transition: .25s ease;
+  transition-delay: 0.3s;
 }
 
 
@@ -81,13 +88,13 @@
 .svgIcon{
   width: 1.5em;
   height: 1.5em;
-  transition: 0.75s ease;
+  transition: 0.25s ease;
   filter: invert(93%) sepia(12%) saturate(197%) hue-rotate(106deg) brightness(92%) contrast(88%);
 }
 
 .sidebar-element:hover * .svgIcon {
   color: #2F404F;
-  transition: 0.75s ease;
+  transition: 0.25s ease;
   filter: invert(19%) sepia(7%) saturate(2683%) hue-rotate(167deg) brightness(98%) contrast(82%);
 }
 
@@ -104,8 +111,10 @@
 .line{
   width: 70%;
   height: 0.2em;
-  background-color: rgba(199, 218, 211,0.5);
+
   transition: 0.75s ease;
+  border-bottom-style: dashed;
+  border-color: rgba(199, 218, 211,0.5);
 }
 
 .sidebar.active .line{
