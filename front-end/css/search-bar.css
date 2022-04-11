@@ -41,14 +41,17 @@ input[type='text']::placeholder {
   background: rgb(239, 243, 248);
 
   outline: solid 2px #2F404F;
-  transition:all 0.4s ease-in-out;
+  transition:all 0.1s ease-in-out;
 }
 
 .search-bar:hover {
   
+  width: 0;
+  height: 0.8em;
+
   background: rgb(239, 243, 248);
   outline: solid 5px #2F404F;
-  transition:all 0.4s ease-in-out;
+  transition:all 0.1s ease-in-out;
 }
 
 
