@@ -9,6 +9,9 @@ const getTrending = async () => {
 
   console.log(data1.data);
 
+
+
+
   data1.data.map((o) => {
     const html = `
     <div class="gif-preview">
@@ -20,6 +23,28 @@ const getTrending = async () => {
     `;
 
     trendingContainer.insertAdjacentHTML('beforeend', html);
+
+
+    
+  });
+
+
+  const gifThumbnails = document.querySelectorAll('.gif-preview');
+
+  Array.from(gifThumbnails).forEach((el) => {
+    const likeBtn = el.children[1];
+  
+    el.addEventListener('mouseover', () => {
+      if (likeBtn) {
+        likeBtn.style.opacity = 1;
+      }
+    });
+  
+    el.addEventListener('mouseout', () => {
+      if (likeBtn) {
+        likeBtn.style.opacity = 0;
+      }
+    });
   });
 };
 getTrending();
