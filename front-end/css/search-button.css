@@ -5,7 +5,7 @@
   align-items: center;
 
   cursor: pointer;
-  height: 3.875rem;
+  height: 4rem;
   width: 8rem;
   border: none;
 
@@ -19,10 +19,11 @@
 }
 
 .search-button:hover {
-  background-image: linear-gradient(to left, #3c9a70, #444ce0);
+  background-image: linear-gradient(to top, #9ebada, #2F404F);
+  border: solid 2px #2F404F;
 }
 
 .search-button:active {
-  background: #4e66d1;
+  background: #2F404F;
   outline: 0;
 }
