@@ -14,6 +14,8 @@
   height: 15em;
   object-fit: cover;
   transition: 0.15s;
+
+  border: 1mm solid;
 }
 
 .thumbnail:hover {
@@ -38,7 +40,7 @@
 .like-btn {
   position: absolute;
   top: 87%;
-  left: 90%;
+  left: 87%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   background-color: transparent;
