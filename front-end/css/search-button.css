@@ -22,8 +22,7 @@
   background-image: linear-gradient(to left, #3c9a70, #444ce0);
 }
 
-.search-button:active,
-.search-button:focus {
-  background: #90ed6e;
+.search-button:active {
+  background: #4e66d1;
   outline: 0;
 }
