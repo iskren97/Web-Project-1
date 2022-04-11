@@ -1,6 +1,6 @@
 .gif-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 
   column-gap: 0.625rem;
 
@@ -12,14 +12,12 @@
 .thumbnail {
   width: 100%;
   height: 15em;
-  object-fit: cover;
+  object-fit: contain;
   transition: 0.15s;
-
-  border: 1mm solid;
 }
 
 .thumbnail:hover {
-  opacity: 0.8;
+  opacity: 0.5;
 }
 
 .gif-category {
@@ -49,6 +47,8 @@
   border: none;
   cursor: pointer;
   transition: opacity 0.15s;
+
+  /* border: 1mm solid; */
 
   opacity: 0;
 }
