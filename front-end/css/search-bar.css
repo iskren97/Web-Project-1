@@ -33,18 +33,24 @@ input[type='text']::placeholder {
 }
 
 /* това е когато цъкнем на полето за търсене */
-.search-bar:focus,
-.search-bar:hover {
+.search-bar:focus {
   outline: 0;
 
   width: 0;
   height: 1.1em;
   background: rgb(239, 243, 248);
 
-  /* box-shadow: 0 0 1.5px rgba(0, 0, 0, 0.8) inset; */
   outline: solid 2px #2F404F;
-  transition:all 0.6s ease-in-out;
+  transition:all 0.4s ease-in-out;
 }
+
+.search-bar:hover {
+  
+  background: rgb(239, 243, 248);
+  outline: solid 5px #2F404F;
+  transition:all 0.4s ease-in-out;
+}
+
 
 
 .search-bar::-webkit-input-placeholder {
