@@ -6,7 +6,7 @@ export const trendingView = () => {
 
   const getAllTrendingData = async () => {
     const response = await fetch(
-      'https://api.giphy.com/v1/gifs/trending?api_key=L6yFCUcFk8wlKFtQK3IemTQQd7JLiHv5&limit=25&rating=g'
+      'https://api.giphy.com/v1/gifs/trending?api_key=L6yFCUcFk8wlKFtQK3IemTQQd7JLiHv5&rating=g'
     );
 
     const resultData = await response.json();
