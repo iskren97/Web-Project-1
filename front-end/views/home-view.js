@@ -1,3 +1,5 @@
+import { getThumbnails } from '../helpers/thumbnails.js';
+
 export const homeView = () => {
   const main = document.querySelector('main');
 
@@ -160,9 +162,8 @@ export const homeView = () => {
             </div>
           </section>
   `;
-
-  const trendingContainer = document.querySelector('#trending');
   const getTrending = async () => {
+    const trendingContainer = document.querySelector('#trending');
     const resp1 = await fetch(
       'https://api.giphy.com/v1/gifs/trending?api_key=L6yFCUcFk8wlKFtQK3IemTQQd7JLiHv5&limit=14&rating=g'
     );
@@ -182,23 +183,7 @@ export const homeView = () => {
       trendingContainer.insertAdjacentHTML('beforeend', html);
     });
 
-    const gifThumbnails = document.querySelectorAll('.gif-preview');
-
-    Array.from(gifThumbnails).forEach((el) => {
-      const likeBtn = el.children[1];
-
-      el.addEventListener('mouseover', () => {
-        if (likeBtn) {
-          likeBtn.style.opacity = 1;
-        }
-      });
-
-      el.addEventListener('mouseout', () => {
-        if (likeBtn) {
-          likeBtn.style.opacity = 0;
-        }
-      });
-    });
+    getThumbnails();
   };
   getTrending();
 };

@@ -1,4 +1,5 @@
 import { q } from '../helpers/helpers.js';
+import { getThumbnails } from '../helpers/thumbnails.js';
 export const trendingView = () => {
   const main = q('main');
 
@@ -26,7 +27,8 @@ export const trendingView = () => {
     });
 
     main.appendChild(container);
-  };
 
+    getThumbnails();
+  };
   return getAllTrendingData();
 };
