@@ -9,16 +9,25 @@ export const searchView = () => {
     const searchValue = q('#search-field').value;
     main.innerHTML = '';
 
-    const title = document.createElement('h1');
-    title.innerHTML = 'Search results for: ' + searchValue;
-    title.className = 'gif-category';
-    main.appendChild(title);
+   
 
-    const section = document.createElement('section');
-    section.className = 'gif-grid';
-    main.appendChild(section);
+    if(searchValue == ""){
+      const error = document.createElement('h1');
+      error.innerHTML = 'ERROR 404: Please enter a valid search term';
+      error.className = 'gif-category';
+      main.appendChild(error);
+      return;
+    }else{
+      const title = document.createElement('h1');
+      title.innerHTML = 'Search results for: ' + searchValue;
+      title.className = 'gif-category';
+      main.appendChild(title);
+  
+      const section = document.createElement('section');
+      section.className = 'gif-grid';
+      main.appendChild(section);
 
-    let searchWord = 'pixel ' + searchValue;
+      let searchWord = 'pixel ' + searchValue;
     const searchUrl = `https://api.giphy.com/v1/gifs/search?api_key=L6yFCUcFk8wlKFtQK3IemTQQd7JLiHv5&q=${searchWord}&limit=25&offset=0&rating=G&lang=en`;
 
     let res = await fetch(searchUrl).then((res) => res.json());
@@ -36,6 +45,11 @@ export const searchView = () => {
     });
 
     getThumbnails();
+
+
+    }
+
+    
   };
 
   searchBtn.addEventListener('click', searchFunc);
