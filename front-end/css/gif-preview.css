@@ -38,17 +38,16 @@
 .like-btn {
   position: absolute;
   top: 87%;
-  left: 87%;
+  left: 85%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
-  background-color: transparent;
+  background-color: rgb(47, 64, 79);
   color: white;
   font-size: 1.875rem;
-  border: none;
   cursor: pointer;
   transition: opacity 0.15s;
 
-  /* border: 1mm solid; */
+  border: 1mm solid;
 
   opacity: 0;
 }
