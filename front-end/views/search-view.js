@@ -1,21 +1,24 @@
+import { q } from '../helpers/helpers.js';
+import { qAll } from '../helpers/helpers.js';
+
 export const searchView = () => {
-  const main = document.querySelector("main");
-  const searchBtn = document.querySelector("#searchBtn");
+  const main = q('main');
+  const searchBtn = q('#searchBtn');
 
   let searchFunc = async function () {
-    const searchValue = document.querySelector("#search-field").value;
-    main.innerHTML = "";
+    const searchValue = q('#search-field').value;
+    main.innerHTML = '';
 
-    const title = document.createElement("h1");
-    title.innerHTML = "Search results for: " + searchValue;
-    title.className = "gif-category";
+    const title = document.createElement('h1');
+    title.innerHTML = 'Search results for: ' + searchValue;
+    title.className = 'gif-category';
     main.appendChild(title);
 
-    const section = document.createElement("section");
-    section.className = "gif-grid";
+    const section = document.createElement('section');
+    section.className = 'gif-grid';
     main.appendChild(section);
 
-    let searchWord = "pixel " + searchValue;
+    let searchWord = 'pixel ' + searchValue;
     const searchUrl = `https://api.giphy.com/v1/gifs/search?api_key=L6yFCUcFk8wlKFtQK3IemTQQd7JLiHv5&q=${searchWord}&limit=25&offset=0&rating=G&lang=en`;
 
     let res = await fetch(searchUrl).then((res) => res.json());
@@ -29,21 +32,21 @@ export const searchView = () => {
         </button>
       </div>
       `;
-      section.insertAdjacentHTML("beforeend", html);
+      section.insertAdjacentHTML('beforeend', html);
     });
 
-    const gifThumbnails = document.querySelectorAll(".gif-preview");
+    const gifThumbnails = qAll('.gif-preview');
 
     Array.from(gifThumbnails).forEach((el) => {
       const likeBtn = el.children[1];
 
-      el.addEventListener("mouseover", () => {
+      el.addEventListener('mouseover', () => {
         if (likeBtn) {
           likeBtn.style.opacity = 1;
         }
       });
 
-      el.addEventListener("mouseout", () => {
+      el.addEventListener('mouseout', () => {
         if (likeBtn) {
           likeBtn.style.opacity = 0;
         }
@@ -51,11 +54,11 @@ export const searchView = () => {
     });
   };
 
-  searchBtn.addEventListener("click", searchFunc);
+  searchBtn.addEventListener('click', searchFunc);
 
-  let searchField = document.querySelector("#search-field");
+  let searchField = q('#search-field');
 
-  searchField.addEventListener("keyup", function (event) {
+  searchField.addEventListener('keyup', function (event) {
     if (event.keyCode === 13) {
       event.preventDefault();
       searchBtn.click();
