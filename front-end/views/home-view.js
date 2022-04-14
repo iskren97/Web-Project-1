@@ -1,99 +1,16 @@
+import { q } from '../helpers/helpers.js';
 import { getThumbnails } from '../helpers/thumbnails.js';
 import { generateView } from './single-gif-view.js';
 export const homeView = () => {
-  const main = document.querySelector('main');
+  const main = q('main');
 
   main.innerHTML = `
   <h1 class="gif-category">Editors picks:</h1>
 
           <!-- section Editors picks: -->
-          <section class="gif-grid">
+          <section class="gif-grid" id="editors">
 
-            <div class="gif-preview">
-            <img class="thumbnail" src="icons/giphy.gif" alt="" />
-            <div class="thumbnail-row">
-            <p class="gif-info" style="margin-top: 5px">Author: Someone </p>
-            <p class="gif-info">Date: date </p>
-            <p class="gif-info">Tags: tags </p>
-              <button class="like-btn">Like
-                <i class="fa fa-fw fa-heart"></i>
-              </button>
-              </div>
-            </div>
-
-
-            <div class="gif-preview">
-            <img class="thumbnail" src="icons/giphy.gif" alt="" />
-            <div class="thumbnail-row">
-            <p class="gif-info" style="margin-top: 5px">Author: Someone </p>
-            <p class="gif-info">Date: date </p>
-            <p class="gif-info">Tags: tags </p>
-              <button class="like-btn">Like
-                <i class="fa fa-fw fa-heart"></i>
-              </button>
-              </div>
-            </div>
-
-            <div class="gif-preview">
-            <img class="thumbnail" src="icons/giphy.gif" alt="" />
-            <div class="thumbnail-row">
-            <p class="gif-info" style="margin-top: 5px">Author: Someone </p>
-            <p class="gif-info">Date: date </p>
-            <p class="gif-info">Tags: tags </p>
-              <button class="like-btn">Like
-                <i class="fa fa-fw fa-heart"></i>
-              </button>
-              </div>
-            </div>
-
-            <div class="gif-preview">
-            <img class="thumbnail" src="icons/giphy.gif" alt="" />
-            <div class="thumbnail-row">
-            <p class="gif-info" style="margin-top: 5px">Author: Someone </p>
-            <p class="gif-info">Date: date </p>
-            <p class="gif-info">Tags: tags </p>
-              <button class="like-btn">Like
-                <i class="fa fa-fw fa-heart"></i>
-              </button>
-              </div>
-            </div>
-
-            <div class="gif-preview">
-            <img class="thumbnail" src="icons/giphy.gif" alt="" />
-            <div class="thumbnail-row">
-            <p class="gif-info" style="margin-top: 5px">Author: Someone </p>
-            <p class="gif-info">Date: date </p>
-            <p class="gif-info">Tags: tags </p>
-              <button class="like-btn">Like
-                <i class="fa fa-fw fa-heart"></i>
-              </button>
-              </div>
-            </div>
-
-            <div class="gif-preview">
-            <img class="thumbnail" src="icons/giphy.gif" alt="" />
-            <div class="thumbnail-row">
-            <p class="gif-info" style="margin-top: 5px">Author: Someone </p>
-            <p class="gif-info">Date: date </p>
-            <p class="gif-info">Tags: tags </p>
-              <button class="like-btn">Like
-                <i class="fa fa-fw fa-heart"></i>
-              </button>
-              </div>
-            </div>
-
-            <div class="gif-preview">
-            <img class="thumbnail" src="icons/giphy.gif" alt="" />
-            <div class="thumbnail-row">
-            <p class="gif-info" style="margin-top: 5px">Author: Someone </p>
-            <p class="gif-info">Date: date </p>
-            <p class="gif-info">Tags: tags </p>
-              <button class="like-btn">Like
-                <i class="fa fa-fw fa-heart"></i>
-              </button>
-              </div>
-            </div>
-
+          
           </section>
 
           <h1 class="gif-category">Trending:</h1>
@@ -208,7 +125,7 @@ export const homeView = () => {
           </section>
   `;
   const getTrending = async () => {
-    const trendingContainer = document.querySelector('#trending');
+    const trendingContainer = q('#trending');
     const resp1 = await fetch(
       'https://api.giphy.com/v1/gifs/search?api_key=L6yFCUcFk8wlKFtQK3IemTQQd7JLiHv5&q=pixel&limit=14&offset=0&rating=g&lang=en'
     );
@@ -216,9 +133,7 @@ export const homeView = () => {
     const data1 = await resp1.json();
 
     data1.data.map((o) => {
-
-
-      const html = generateView(o)
+      const html = generateView(o);
 
       trendingContainer.insertAdjacentHTML('beforeend', html);
     });
@@ -226,4 +141,21 @@ export const homeView = () => {
     getThumbnails();
   };
   getTrending();
+
+  const getEditorsPicks = async () => {
+    const editorsContainer = q('#editors');
+    const resp1 = await fetch(
+      'https://api.giphy.com/v1/gifs/search?api_key=L6yFCUcFk8wlKFtQK3IemTQQd7JLiHv5&q=pixel artists&limit=7&offset=0&rating=g&lang=en'
+    );
+    const data1 = await resp1.json();
+
+    data1.data.map((o) => {
+      const editorsPicks = generateView(o);
+
+      editorsContainer.insertAdjacentHTML('beforeend', editorsPicks);
+    });
+
+    getThumbnails();
+  };
+  getEditorsPicks();
 };
