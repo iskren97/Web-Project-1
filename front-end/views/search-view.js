@@ -40,6 +40,7 @@ export const searchView = () => {
       <div class="thumbnail-row">
       <p class="gif-info" style="margin-top: 5px">Author: ${username} </p>
       <p class="gif-info">Uploaded on: ${gif.import_datetime} </p>
+      <p class="gif-info">Title: ${gif.title} </p>
         <button class="like-btn">Like
           <i class="fa fa-fw fa-heart"></i>
         </button>
