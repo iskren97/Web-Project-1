@@ -17,7 +17,7 @@ export const trendingView = () => {
     container.className = 'gif-grid';
 
     const containerTitle = document.createElement('h1');
-    containerTitle.innerHTML = 'trending gifs:';
+    containerTitle.innerHTML = 'Trending GIFs:';
     containerTitle.className = 'gif-category';
 
     main.appendChild(containerTitle);

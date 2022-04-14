@@ -7,8 +7,11 @@ body {
 }
 
 :root {
-  --font-color-light: #c7dad3;
-  --background-color-light: #2f404f;
+  --font-color: #c7dad3;
+  --font-background-color: #2f404f;
+  --content-background: white;
+  --header-color: #2f404f;
+  --header-border-color: black;
 }
 
 .container {
@@ -16,10 +19,13 @@ body {
   flex-direction: row;
   flex-grow: 1;
   height: 100vh;
+  background-color: var(--content-background);
+  transition: .25s ease;
 }
 
 .content {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  
 }

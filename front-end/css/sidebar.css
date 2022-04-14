@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   width: 6em;
-  background-color: var(--background-color-light);
+  background-color: var(--font-background-color);
   transition: all 0.5s ease;
   overflow: hidden;
 }
@@ -33,12 +33,12 @@
 }
 
 .sidebar-element:hover * {
-  color: var(--background-color-light);
+  color: var(--font-background-color);
   transition: 0.25s ease;
 }
 
 .sidebar-element:hover {
-  background-color: var(--font-color-light);
+  background-color: var(--font-color);
   transition: 0.25s ease;
 }
 
@@ -50,10 +50,9 @@
   font-family: 'Press Start 2P', cursive;
   font-weight: normal;
   font-size: 1em;
-  color: var(--font-color-light);
+  color: var(--font-color);
   overflow: hidden;
   transition: 0.25s ease;
-  transition-delay: 0s;
 }
 
 .sidebar.active .sidebar-element-text {
@@ -65,7 +64,7 @@
   display: flex;
   opacity: 1;
   transition: .25s ease;
-  transition-delay: 0.3s;
+
 }
 
 
@@ -80,7 +79,7 @@
   display: block;
   margin-left: 1rem;
   margin-right: 0.2em;
-  color: var(--font-color-light);
+  color: var(--font-color);
   width: 2em;
   transition: 0.75s ease;
 }
@@ -111,7 +110,6 @@
 .line{
   width: 70%;
   height: 0.2em;
-
   transition: 0.75s ease;
   border-bottom-style: dashed;
   border-color: rgba(199, 218, 211,0.5);
@@ -165,7 +163,7 @@
 }
 
 .toggle input:checked+.slider {
-  background-color: #2196F3;
+  background-color: var(--font-color);
 }
 
 .toggle input:checked+.slider::before {

@@ -1,3 +1,5 @@
+@import "style.css";
+
 /* left section -> от flexbox-a лявата му част, която държи заглавието в случая */
 
 /* header styles */
@@ -17,7 +19,7 @@
 
   flex-direction: row;
 
-  background-color: white;
+  background-color: var(--content-background-color);
 }
 
 /* h1 styles -> site name*/
@@ -56,12 +58,11 @@
 .border-bottom {
   margin-left: 2rem;
   margin-right: 2rem;
-
   border-bottom: dashed;
   border-color: white;
-
+  color: var(--header-border-color);
   overflow: hidden;
   border-bottom: dashed;
 
-  transition: opacity 0.15s;
+  transition: .25s ease;
 }

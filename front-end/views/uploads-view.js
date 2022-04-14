@@ -20,7 +20,7 @@ export const uploadsView = async () => {
   container.className = "gif-grid";
 
   const containerTitle = document.createElement("h1");
-  containerTitle.innerHTML = "my gifs:";
+  containerTitle.innerHTML = "My GIFs:";
   containerTitle.className = "gif-category";
 
   main.appendChild(containerTitle);

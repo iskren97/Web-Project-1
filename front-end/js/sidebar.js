@@ -58,9 +58,23 @@ darkModeButton.addEventListener("click", function(){
 
   
   if(button.checked){
-    r.style.setProperty('--font-color-light', 'green');
+    r.style.setProperty('--font-color', "#DEA82B");
+    r.style.setProperty('--font-background-color', '#222831');
+    r.style.setProperty('--content-background', '#0F1724');
+    r.style.setProperty('--header-color', '#DEA82B');
+    r.style.setProperty('--header-border-color', 'rgba(199, 218, 211,0.5)');
+
+
+
   }else{
-    r.style.setProperty('--font-color-light', '#C7DAD3');
+    r.style.setProperty('--font-color', '#C7DAD3');
+    r.style.setProperty('--font-background-color', '#2f404f');
+    r.style.setProperty('--content-background', 'white');
+    r.style.setProperty('--header-color', '#2f404f');
+    r.style.setProperty('--header-border-color', 'black');
+
+
+
   }
 })
 
