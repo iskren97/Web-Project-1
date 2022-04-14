@@ -1,5 +1,6 @@
 import { q } from '../helpers/helpers.js';
 import { getThumbnails } from '../helpers/thumbnails.js';
+import { generateView } from './single-gif-view.js';
 
 export const searchView = () => {
   const main = q('main');
@@ -32,21 +33,9 @@ export const searchView = () => {
       let res = await fetch(searchUrl).then((res) => res.json());
 
       res.data.map((gif) => {
-        const username = gif.username || 'No username';
+        
 
-        const html = `
-      <div class="gif-preview">
-      <img class="thumbnail" src="${gif.images.fixed_height.url}" alt="" />
-      <div class="thumbnail-row">
-      <p class="gif-info" style="margin-top: 5px">Author: ${username} </p>
-      <p class="gif-info">Uploaded on: ${gif.import_datetime} </p>
-      <p class="gif-info">Title: ${gif.title} </p>
-        <button class="like-btn">Like
-          <i class="fa fa-fw fa-heart"></i>
-        </button>
-        </div>
-      </div>
-      `;
+       const html = generateView(gif)
         section.insertAdjacentHTML('beforeend', html);
       });
       searchField.value = '';

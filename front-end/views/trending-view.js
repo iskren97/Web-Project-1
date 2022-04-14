@@ -1,5 +1,7 @@
 import { q } from '../helpers/helpers.js';
 import { getThumbnails } from '../helpers/thumbnails.js';
+import { generateView } from './single-gif-view.js';
+
 export const trendingView = () => {
   const main = q('main');
   main.innerHTML = '';
@@ -23,19 +25,7 @@ export const trendingView = () => {
     resultData.data.map((o) => {
       const username = o.username || 'No username';
 
-      const html = `
-      <div class="gif-preview">
-      <img class="thumbnail" src="${o.images.original.url}" alt="" />
-      <div class="thumbnail-row">
-      <p class="gif-info" style="margin-top: 5px">Author: ${username} </p>
-      <p class="gif-info">Uploaded on: ${o.import_datetime} </p>
-      <p class="gif-info">Title: ${o.title} </p>
-        <button class="like-btn">Like
-          <i class="fa fa-fw fa-heart"></i>
-        </button>
-        </div>
-      </div>
-      `;
+      const html = generateView(o)
 
       container.insertAdjacentHTML('beforeend', html);
     });

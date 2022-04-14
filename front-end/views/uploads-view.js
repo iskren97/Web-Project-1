@@ -1,6 +1,7 @@
 import { q } from "../helpers/helpers.js";
 import { getUploads } from "../helpers/uploads.js";
 import { getThumbnails } from "../helpers/thumbnails.js";
+import { generateView } from "./single-gif-view.js";
 
 export const uploadsView = async () => {
   const main = q("main");
@@ -25,19 +26,7 @@ export const uploadsView = async () => {
   main.appendChild(containerTitle);
 
   resultData.data.map((o) => {
-    const html = `
-    <div class="gif-preview">
-    <img class="thumbnail" src="${o.images.original.url}" alt="" />
-    <div class="thumbnail-row">
-    <p class="gif-info" style="margin-top: 5px">Author: Someone </p>
-    <p class="gif-info">Date: date </p>
-    <p class="gif-info">Tags: tags </p>
-      <button class="like-btn">Like
-        <i class="fa fa-fw fa-heart"></i>
-      </button>
-      </div>
-    </div>
-    `;
+    const html = generateView(o);
 
     container.insertAdjacentHTML("beforeend", html);
   });
