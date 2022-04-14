@@ -165,7 +165,7 @@ export const homeView = () => {
   const getTrending = async () => {
     const trendingContainer = document.querySelector('#trending');
     const resp1 = await fetch(
-      'https://api.giphy.com/v1/gifs/trending?api_key=L6yFCUcFk8wlKFtQK3IemTQQd7JLiHv5&limit=14&rating=g'
+      'https://api.giphy.com/v1/gifs/search?api_key=L6yFCUcFk8wlKFtQK3IemTQQd7JLiHv5&q=pixel&limit=14&offset=0&rating=g&lang=en'
     );
 
     const data1 = await resp1.json();
