@@ -8,47 +8,92 @@ export const homeView = () => {
 
           <!-- section Editors picks: -->
           <section class="gif-grid">
+
             <div class="gif-preview">
-              <img class="thumbnail" src="icons/giphy.gif" alt="" />
-              <button class="like-btn">
+            <img class="thumbnail" src="icons/giphy.gif" alt="" />
+            <div class="thumbnail-row">
+            <p class="gif-info" style="margin-top: 5px">Author: Someone </p>
+            <p class="gif-info">Date: date </p>
+            <p class="gif-info">Tags: tags </p>
+              <button class="like-btn">Like
                 <i class="fa fa-fw fa-heart"></i>
               </button>
+              </div>
+            </div>
+
+
+            <div class="gif-preview">
+            <img class="thumbnail" src="icons/giphy.gif" alt="" />
+            <div class="thumbnail-row">
+            <p class="gif-info" style="margin-top: 5px">Author: Someone </p>
+            <p class="gif-info">Date: date </p>
+            <p class="gif-info">Tags: tags </p>
+              <button class="like-btn">Like
+                <i class="fa fa-fw fa-heart"></i>
+              </button>
+              </div>
             </div>
 
             <div class="gif-preview">
-              <img class="thumbnail" src="icons/giphy.gif" alt="" />
-              <button class="like-btn">
+            <img class="thumbnail" src="icons/giphy.gif" alt="" />
+            <div class="thumbnail-row">
+            <p class="gif-info" style="margin-top: 5px">Author: Someone </p>
+            <p class="gif-info">Date: date </p>
+            <p class="gif-info">Tags: tags </p>
+              <button class="like-btn">Like
                 <i class="fa fa-fw fa-heart"></i>
               </button>
+              </div>
             </div>
 
             <div class="gif-preview">
-              <img class="thumbnail" src="icons/giphy.gif" />
-              <button class="like-btn">
+            <img class="thumbnail" src="icons/giphy.gif" alt="" />
+            <div class="thumbnail-row">
+            <p class="gif-info" style="margin-top: 5px">Author: Someone </p>
+            <p class="gif-info">Date: date </p>
+            <p class="gif-info">Tags: tags </p>
+              <button class="like-btn">Like
                 <i class="fa fa-fw fa-heart"></i>
               </button>
+              </div>
             </div>
 
             <div class="gif-preview">
-              <img class="thumbnail" src="icons/giphy.gif" alt="" />
-              <button class="like-btn">
+            <img class="thumbnail" src="icons/giphy.gif" alt="" />
+            <div class="thumbnail-row">
+            <p class="gif-info" style="margin-top: 5px">Author: Someone </p>
+            <p class="gif-info">Date: date </p>
+            <p class="gif-info">Tags: tags </p>
+              <button class="like-btn">Like
                 <i class="fa fa-fw fa-heart"></i>
               </button>
+              </div>
             </div>
 
             <div class="gif-preview">
-              <img class="thumbnail" src="icons/giphy.gif" alt="" />
-              <button class="like-btn">
+            <img class="thumbnail" src="icons/giphy.gif" alt="" />
+            <div class="thumbnail-row">
+            <p class="gif-info" style="margin-top: 5px">Author: Someone </p>
+            <p class="gif-info">Date: date </p>
+            <p class="gif-info">Tags: tags </p>
+              <button class="like-btn">Like
                 <i class="fa fa-fw fa-heart"></i>
               </button>
+              </div>
             </div>
 
             <div class="gif-preview">
-              <img class="thumbnail" src="icons/giphy.gif" alt="" />
-              <button class="like-btn">
+            <img class="thumbnail" src="icons/giphy.gif" alt="" />
+            <div class="thumbnail-row">
+            <p class="gif-info" style="margin-top: 5px">Author: Someone </p>
+            <p class="gif-info">Date: date </p>
+            <p class="gif-info">Tags: tags </p>
+              <button class="like-btn">Like
                 <i class="fa fa-fw fa-heart"></i>
               </button>
+              </div>
             </div>
+            
           </section>
 
           <h1 class="gif-category">Trending:</h1>
@@ -173,10 +218,15 @@ export const homeView = () => {
     data1.data.map((o) => {
       const html = `
       <div class="gif-preview">
-        <img class="thumbnail" src="${o.images.original.url}" alt="" />
-        <button class="like-btn">
-        <i class="fa fa-fw fa-heart"></i>
-      </button>
+      <img class="thumbnail" src="${o.images.original.url}" alt="" />
+      <div class="thumbnail-row">
+      <p class="gif-info" style="margin-top: 5px">Author: Someone </p>
+      <p class="gif-info">Date: date </p>
+      <p class="gif-info">Tags: tags </p>
+        <button class="like-btn">Like
+          <i class="fa fa-fw fa-heart"></i>
+        </button>
+        </div>
       </div>
       `;
 
