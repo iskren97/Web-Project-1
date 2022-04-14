@@ -1,32 +1,32 @@
-import { q } from '../helpers/helpers.js';
-import { getThumbnails } from '../helpers/thumbnails.js';
+import { q } from "../helpers/helpers.js";
+import { getThumbnails } from "../helpers/thumbnails.js";
 
 export const searchView = () => {
-  const main = q('main');
-  const searchBtn = q('#searchBtn');
-  const searchField = q('#search-field');
+  const main = q("main");
+  const searchBtn = q("#searchBtn");
+  const searchField = q("#search-field");
 
   let searchFunc = async function () {
-    const searchValue = q('#search-field').value;
-    main.innerHTML = '';
+    const searchValue = q("#search-field").value;
+    main.innerHTML = "";
 
-    if (searchValue == '') {
-      const error = document.createElement('h1');
-      error.innerHTML = 'ERROR 404: Please enter a valid search term';
-      error.className = 'gif-category';
+    if (searchValue == "") {
+      const error = document.createElement("h1");
+      error.innerHTML = "ERROR 404: Please enter a valid search term";
+      error.className = "gif-category";
       main.appendChild(error);
       return;
     } else {
-      const title = document.createElement('h1');
-      title.innerHTML = 'Search results for: ' + searchValue;
-      title.className = 'gif-category';
+      const title = document.createElement("h1");
+      title.innerHTML = "Search results for: " + searchValue;
+      title.className = "gif-category";
       main.appendChild(title);
 
-      const section = document.createElement('section');
-      section.className = 'gif-grid';
+      const section = document.createElement("section");
+      section.className = "gif-grid";
       main.appendChild(section);
 
-      let searchWord = 'pixel ' + searchValue;
+      let searchWord = "pixel " + searchValue;
       const searchUrl = `https://api.giphy.com/v1/gifs/search?api_key=L6yFCUcFk8wlKFtQK3IemTQQd7JLiHv5&q=${searchWord}&limit=50&offset=0&rating=G&lang=en`;
 
       let res = await fetch(searchUrl).then((res) => res.json());
@@ -45,21 +45,21 @@ export const searchView = () => {
         </div>
       </div>
       `;
-        section.insertAdjacentHTML('beforeend', html);
+        section.insertAdjacentHTML("beforeend", html);
       });
-      searchField.value = '';
+      searchField.value = "";
 
       getThumbnails();
     }
   };
 
-  searchBtn.addEventListener('click', searchFunc);
+  searchBtn.addEventListener("click", searchFunc);
 
-  searchField.addEventListener('keyup', function (event) {
+  searchField.addEventListener("keyup", function (event) {
     if (event.keyCode === 13) {
       event.preventDefault();
       searchBtn.click();
-      searchField.value = '';
+      searchField.value = "";
     }
   });
 };

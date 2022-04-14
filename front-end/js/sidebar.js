@@ -2,7 +2,7 @@ import { homeView} from "../views/home-view.js"
 import { trendingView} from "../views/trending-view.js"
 import { uploadsView} from "../views/uploads-view.js"
 import { favoritesView} from "../views/favorites-view.js"
-import { uploadView} from "../views/upload-view.js"
+import { uploadView} from "../views/upload-gif-view.js"
 
 let btn = document.querySelector("#hamburger-btn");
 let sidebar = document.querySelector(".sidebar");

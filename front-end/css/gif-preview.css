@@ -15,7 +15,7 @@
 
   font-family: 'Press Start 2P', cursive;
   font-weight: normal;
-
+  max-width: 15em;
   background-color: black;
   color: white;
 
@@ -30,7 +30,7 @@
 .thumbnail-row p {
   margin: 0;
   padding: 0;
-
+  
   margin-left: 5px;
 
   font-size: 15px;
@@ -38,6 +38,7 @@
 
 .thumbnail {
   width: 100%;
+  max-width: 15em;
   height: 15em;
   object-fit: cover;
   transition: 0.15s;
@@ -56,6 +57,7 @@
 .gif-preview {
   position: relative;
   width: 100%;
+  max-width: 15em;
   height: 15.22em;
 }
 
