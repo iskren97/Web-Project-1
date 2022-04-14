@@ -2,6 +2,7 @@ import { homeView} from "../views/home-view.js"
 import { trendingView} from "../views/trending-view.js"
 import { uploadsView} from "../views/uploads-view.js"
 import { favoritesView} from "../views/favorites-view.js"
+import { uploadView} from "../views/upload-view.js"
 
 let btn = document.querySelector("#hamburger-btn");
 let sidebar = document.querySelector(".sidebar");
@@ -29,6 +30,9 @@ sidebarElements.map(e=>{
         }
         if(e?.attributes[1]?.nodeValue == "myUploadsId"){
           uploadsView();
+        }
+        if(e?.attributes[1]?.nodeValue == "uploadGifId"){
+          uploadView();
         }
     })
 
