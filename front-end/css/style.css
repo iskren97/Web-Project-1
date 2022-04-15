@@ -12,6 +12,16 @@ body {
   --content-background: white;
   --header-color: #2f404f;
   --header-border-color: black;
+  --sidebar-icon-color: invert(93%) sepia(12%) saturate(197%) hue-rotate(106deg) brightness(92%) contrast(88%);
+  --sidebar-icon-color-hover: invert(20%) sepia(19%) saturate(944%) hue-rotate(166deg) brightness(95%) contrast(86%) ;
+  --search-bar-background-color: rgb(207, 216, 226);
+  --gradient-color1: #201261;
+  --gradient-color2: #203886;
+  --gradient-color3: #5159c7;
+  --gradient-color4: #88addf;
+  --search-button-color: white;
+  --file-upload-text-color: #2f404f;
+
 }
 
 .container {

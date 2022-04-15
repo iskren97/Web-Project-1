@@ -14,8 +14,6 @@
 
 
 
-
-
 .sidebar-element{
   display: flex;
   flex-direction: row;
@@ -68,11 +66,6 @@
 }
 
 
-#hamburger-btn{
-  background-color: rgba(255,255,255,0);
-  border-color: rgba(255,255,255,0);
-}
-
 .icon{
   position:relative;
   font-size: 2em;
@@ -81,20 +74,17 @@
   margin-right: 0.2em;
   color: var(--font-color);
   width: 2em;
-  transition: 0.75s ease;
 }
 
 .svgIcon{
   width: 1.5em;
   height: 1.5em;
-  transition: 0.25s ease;
-  filter: invert(93%) sepia(12%) saturate(197%) hue-rotate(106deg) brightness(92%) contrast(88%);
+  filter: var(--sidebar-icon-color);
 }
 
 .sidebar-element:hover * .svgIcon {
   color: #2F404F;
-  transition: 0.25s ease;
-  filter: invert(19%) sepia(7%) saturate(2683%) hue-rotate(167deg) brightness(98%) contrast(82%);
+  filter: var(--sidebar-icon-color-hover);
 }
 
 

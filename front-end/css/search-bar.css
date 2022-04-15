@@ -1,3 +1,5 @@
+@import "style.css";
+
 /* right-section ->
  от flexbox-a дясната част, която държи search bara и search бутона 
  */
@@ -20,7 +22,7 @@
   float: left;
   font: bold 18px 'lucida sans', 'trebuchet MS', 'Tahoma';
   border: none;
-  background-color: rgb(207, 216, 226);
+  background-color: var(--search-bar-background-color);
 
   justify-content: space-between;
   transition:all 0.4s ease-in-out;
@@ -30,29 +32,22 @@
 input[type='text']::placeholder {
   text-align: left;
   font-size: 15px;
+  color: #222831;
 }
 
 /* това е когато цъкнем на полето за търсене */
 .search-bar:focus {
   outline: 0;
-
-  width: 0;
-  height: 1.1em;
-  background: rgb(239, 243, 248);
-
-  outline: solid 2px #2F404F;
-  transition:all 0.2s ease-in-out;
-}
-
-.search-bar:hover {
   
   width: 0;
-  height: 0.8em;
-
+  height: 1em;
   background: rgb(239, 243, 248);
-  outline: solid 5px #2F404F;
+  
+  outline: solid 0.2em #2F404F;
   transition:all 0.2s ease-in-out;
 }
+
+
 
 
 

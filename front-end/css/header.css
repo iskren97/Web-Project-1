@@ -32,11 +32,11 @@
   /* тук надолу са цветовете на заглавието */
 
   background-image: linear-gradient(
-    -225deg,
-    #201261 0%,
-    #203886 29%,
-    #5159c7 67%,
-    #88addf 100%
+    225deg,
+    var(--gradient-color1) 0%,
+    var(--gradient-color2) 29%,
+    var(--gradient-color3) 67%,
+    var(--gradient-color4) 100%
   );
   background-size: auto auto;
   background-clip: border-box;
@@ -46,6 +46,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: textclip 4s linear infinite;
+  animation-direction: reverse;
   display: inline-block;
 }
 

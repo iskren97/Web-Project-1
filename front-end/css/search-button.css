@@ -1,3 +1,5 @@
+@import 'style.css';
+
 /* search button styles */
 .search-button {
   display: flex;
@@ -9,21 +11,22 @@
   width: 8rem;
   border: none;
 
-  font-size: 16px;
+  font-size: 1rem;
   font-family: 'Press Start 2P', cursive;
   font-weight: normal;
 
-  color: #fff;
+  color: var(--search-button-color);
   text-transform: uppercase;
-  background-color: rgb(47, 64, 79);
+  background-color: #2f404f;
+  transition: 0.1s ease;
 }
 
 .search-button:hover {
-  background-image: linear-gradient(to top, #9ebada, #2F404F);
-  border: solid 2px #2F404F;
+  font-size: 1.1rem;
+  transition: 0.1s ease;
 }
 
 .search-button:active {
-  background: #2F404F;
-  outline: 0;
+  font-size: 0.85rem;
+
 }

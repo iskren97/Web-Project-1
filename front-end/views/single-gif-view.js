@@ -6,7 +6,7 @@ export const generateView = (gif) => {
   <div class="gif-preview">
   <img class="thumbnail" src="${gif.images.original.url}" alt="" />
   <div class="thumbnail-row">
-  <p class="gif-info" style="margin: 0.5em;overflow: clip;">Author: ${username} </p>
+  <p class="gif-info" >Author: ${username} </p>
   <p class="gif-info">Uploaded on: ${gif.import_datetime} </p>
   <p class="gif-info">Title: ${title} </p>
     <button class="like-btn">Like
