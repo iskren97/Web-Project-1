@@ -18,4 +18,14 @@ export const getThumbnails = () => {
       }
     });
   });
+
+  console.log(gifThumbnails);
+  const button = qAll(".like-btn")
+
+  Array.from(button).forEach(el=>{
+    el.addEventListener('click', () => {
+      console.log('Clicked');
+      console.dir(el.parentElement.parentElement.attributes[1].nodeValue)
+    })
+  })
 };
