@@ -18,7 +18,7 @@ export const homeView = () => {
   const getTrending = async () => {
     const trendingContainer = q('#trending');
     const resp1 = await fetch(
-      'https://api.giphy.com/v1/gifs/search?api_key=L6yFCUcFk8wlKFtQK3IemTQQd7JLiHv5&q=pixel&limit=14&offset=0&rating=g&lang=en'
+      'https://api.giphy.com/v1/gifs/search?api_key=L6yFCUcFk8wlKFtQK3IemTQQd7JLiHv5&q=pixel&limit=12&offset=0&rating=g&lang=en'
     );
 
     const data = await resp1.json();
@@ -55,7 +55,7 @@ export const homeView = () => {
 
     const getGifs = async () => {
       const resp1 = await fetch(
-        `https://api.giphy.com/v1/gifs/search?api_key=L6yFCUcFk8wlKFtQK3IemTQQd7JLiHv5&q=pixel art&limit=7&offset=${offset}&rating=g&lang=en`
+        `https://api.giphy.com/v1/gifs/search?api_key=L6yFCUcFk8wlKFtQK3IemTQQd7JLiHv5&q=pixel art&limit=12&offset=${offset}&rating=g&lang=en`
       );
       const data = resp1.json();
 
