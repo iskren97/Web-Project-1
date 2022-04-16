@@ -8,7 +8,7 @@
   left: 0;
   right: 0;
   background: var(--content-background);
-
+  transition: 0.25s ease;
   opacity: 0;
 }
 

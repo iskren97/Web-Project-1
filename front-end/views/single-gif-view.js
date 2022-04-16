@@ -1,5 +1,21 @@
 import { getFavorites } from '../helpers/favorites.js'
 
+
+const isFavorite = (id) =>{
+  const currentFavorites = getFavorites();
+  if(currentFavorites.includes(id)){
+    return `<i class="fa fa-fw fa-heart" style="color: red;
+    font-size: 1.3em;
+    position: relative;
+    bottom: 10%;
+    left: 2.7%;"></i>`
+  }else{
+    return ''
+  }
+}
+
+
+
 export const generateView = (gif) => {
   //generate the gif HTML structure
   const username = gif.username || 'No username';
@@ -9,19 +25,7 @@ export const generateView = (gif) => {
     title = title.slice(0, 40) + '...';
   }
 
-  const isFavorite = (id) =>{
-    const currentFavorites = getFavorites();
-    if(currentFavorites.includes(id)){
-      return `<i class="fa fa-fw fa-heart" style="color: red;
-      font-size: 1.3em;
-      position: relative;
-      bottom: 10%;
-      left: 2.7%;"></i>`
-    }else{
-      return ''
-    }
-  }
-
+ 
   return `
   <div class="gif-preview" data-gif-id="${gif.id}">
   <img class="thumbnail" src="${gif.images.original.url}" alt="" />
@@ -39,3 +43,7 @@ export const generateView = (gif) => {
   </div>
   `;
 };
+
+
+
+

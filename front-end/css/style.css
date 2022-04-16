@@ -5,7 +5,9 @@ body {
 
   margin: 0;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 :root {
   --font-color: #c7dad3;
   --font-background-color: #2f404f;
