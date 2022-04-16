@@ -1,14 +1,21 @@
 import { qAll } from './helpers.js';
-
-export const getThumbnails = () => {
+import { addFavorite, removeFavorite, getFavorites} from './favorites.js'
+export const getThumbnails = async() => {
   const gifThumbnails = qAll('.gif-preview');
+  const favorites = getFavorites();
+  
 
   Array.from(gifThumbnails).forEach((el) => {
     const likeBtn = el.children[1];
 
+    const elId = el.dataset.gifId;
+   
     el.addEventListener('mouseover', () => {
       if (likeBtn) {
         likeBtn.style.opacity = 1;
+      }
+      if(favorites.includes(elId)) {
+        likeBtn.children[3].children[0].style.setProperty('color', 'red')
       }
     });
 
@@ -19,13 +26,21 @@ export const getThumbnails = () => {
     });
   });
 
-  // console.log(gifThumbnails);
-  const button = qAll('.like-btn');
+  const button = qAll(".like-btn")
+  
+  Array.from(button).forEach( (likeButton) => {
 
-  Array.from(button).forEach((el) => {
-    el.addEventListener('click', () => {
-      // console.log('Clicked');
-      // console.dir(el.parentElement.parentElement.attributes[1].nodeValue)
+    likeButton.addEventListener('click', () => {
+      console.log('Clicked');
+
+      const gifId = likeButton.parentElement.parentElement.attributes[1].nodeValue;
+      if (favorites.includes(gifId)) {
+        removeFavorite(gifId);
+        console.log('Remove from favorites!')
+      } else {
+        addFavorite(gifId);
+        console.log('Added to favorites!')
+      }
     });
   });
 };
