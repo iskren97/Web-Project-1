@@ -30,14 +30,14 @@ export const getThumbnails = () => {
 
   Array.from(button).forEach((likeButton) => {
     likeButton.addEventListener('click', () => {
+      // console.dir(likeButton); parentNode.parentElement.parentElement.id
       const gifId =
         likeButton.parentElement.parentElement.attributes[1].nodeValue;
       if (favorites.includes(gifId)) {
         removeFavorite(gifId);
         if (
-          likeButton.parentNode.parentElement.parentElement.offsetHeight ===
-            243 &&
-          likeButton.parentNode.parentElement.parentElement.offsetTop === 200
+          likeButton.parentNode.parentElement.parentElement.id ===
+          'favorites-section'
         ) {
           favoritesView();
         }
