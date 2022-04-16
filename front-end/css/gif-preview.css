@@ -1,8 +1,8 @@
-@import "style.css";
+@import 'style.css';
 
 .gif-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 250px));
   column-gap: 0.625rem;
   row-gap: 0.625rem;
   margin-top: 0.625rem;
@@ -11,7 +11,7 @@
 }
 
 .thumbnail-row {
-  opacity:0;
+  opacity: 0;
   display: flex;
   font-family: 'Press Start 2P', cursive;
   font-weight: normal;
@@ -25,17 +25,17 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  transition: 0.3s
+  transition: 0.3s;
 }
 
 .thumbnail-row p {
   margin-left: 0.7em;
-  overflow:hidden;
+  overflow: hidden;
   font-size: 15px;
   width: 95%;
 }
 
-.gif-info{
+.gif-info {
   margin-top: 0.2em;
   margin-bottom: 0.2em;
 }
@@ -54,9 +54,7 @@
   margin-left: 5rem;
   margin-top: 1.25em;
   color: var(--header-color);
-  transition: .5s ease;
-
-
+  transition: 0.5s ease;
 }
 
 .gif-preview {
