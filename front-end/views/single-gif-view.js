@@ -1,3 +1,5 @@
+import { getFavorites } from '../helpers/favorites.js'
+
 export const generateView = (gif) => {
   //generate the gif HTML structure
   const username = gif.username || 'No username';
@@ -7,6 +9,19 @@ export const generateView = (gif) => {
     title = title.slice(0, 40) + '...';
   }
 
+  const isFavorite = (id) =>{
+    const currentFavorites = getFavorites();
+    if(currentFavorites.includes(id)){
+      return `<i class="fa fa-fw fa-heart" style="color: red;
+      font-size: 1.3em;
+      position: relative;
+      bottom: 10%;
+      left: 2.7%;"></i>`
+    }else{
+      return ''
+    }
+  }
+
   return `
   <div class="gif-preview" data-gif-id="${gif.id}">
   <img class="thumbnail" src="${gif.images.original.url}" alt="" />
@@ -14,11 +29,13 @@ export const generateView = (gif) => {
   <p class="gif-info" >Author: ${username} </p>
   <p class="gif-info">Uploaded on: ${gif.import_datetime} </p>
   <p class="gif-info">Title: ${title} </p>
-    <button class="like-btn">
-      <i class="fa fa-fw fa-heart"></i>
-      Like
-    </button>
-    </div>
+  
+  <button class="like-btn">
+  <i class="fa fa-fw fa-heart"></i>
+  Like
+  </button>
+  </div>
+  ${isFavorite(gif.id)}
   </div>
   `;
 };

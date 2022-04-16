@@ -43,6 +43,8 @@ export const getThumbnails = () => {
         }
       } else {
         addFavorite(gifId);
+        console.log(likeButton)
+       
       }
     });
   });
