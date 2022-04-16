@@ -13,6 +13,7 @@ export const favoritesView = async () => {
   containerTitle.className = 'gif-category';
 
   const container = document.createElement('section');
+  container.id = 'favorites-section';
   main.appendChild(containerTitle);
   main.appendChild(container);
 
