@@ -1,6 +1,7 @@
 import { qAll } from './helpers.js';
 import { addFavorite, removeFavorite, getFavorites} from './favorites.js'
-export const getThumbnails = async() => {
+import { favoritesView } from '../views/favorites-view.js';
+export const getThumbnails = () => {
   const gifThumbnails = qAll('.gif-preview');
   const favorites = getFavorites();
   
@@ -37,6 +38,7 @@ export const getThumbnails = async() => {
       if (favorites.includes(gifId)) {
         removeFavorite(gifId);
         console.log('Remove from favorites!')
+
       } else {
         addFavorite(gifId);
         console.log('Added to favorites!')

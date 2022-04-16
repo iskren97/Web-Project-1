@@ -10,6 +10,7 @@ export const addFavorite = (gifId) => {
 export const removeFavorite = (movieId) => {
   favorites = favorites.filter(id => id !== movieId);
   localStorage.setItem('favorites', JSON.stringify(favorites));
+  
 };
 
 export const getFavorites = () => [...favorites];
