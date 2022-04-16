@@ -2,7 +2,7 @@
 
 .gif-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 250px));
+  grid-template-columns: repeat(6, 1fr);
   column-gap: 0.625rem;
   row-gap: 0.625rem;
   margin-top: 0.625rem;
