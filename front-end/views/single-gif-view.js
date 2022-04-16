@@ -1,12 +1,17 @@
 export const generateView = (gif) => {
+  //generate the gif HTML structure
   const username = gif.username || 'No username';
-  const title = gif.title || 'pixel gif';
+  let title = gif.title || 'pixel gif';
+
+  if(title.length > 40){
+    title = title.slice(0, 40) + '...';
+  }
 
   return `
   <div class="gif-preview" data-gif-id="${gif.id}">
   <img class="thumbnail" src="${gif.images.original.url}" alt="" />
   <div class="thumbnail-row">
-  <p class="gif-info" style="margin: 0.5em;overflow: clip;">Author: ${username} </p>
+  <p class="gif-info" >Author: ${username} </p>
   <p class="gif-info">Uploaded on: ${gif.import_datetime} </p>
   <p class="gif-info">Title: ${title} </p>
     <button class="like-btn">Like

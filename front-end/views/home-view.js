@@ -5,124 +5,15 @@ export const homeView = () => {
   const main = q('main');
 
   main.innerHTML = `
-  <h1 class="gif-category">Editors picks:</h1>
-
-          <!-- section Editors picks: -->
-          <section class="gif-grid" id="editors">
-
-          
-          </section>
-
-          <h1 class="gif-category">Trending:</h1>
-
-          
-          <section class="gif-grid" id="trending">
-          
-          </section>
-
-          <h1 class="gif-category">Favorites:</h1>
-          <section class="gif-grid">
-            <div class="gif-preview">
-              <img class="thumbnail" src="icons/giphy.gif" alt="" />
-              <button class="like-btn">
-                <i class="fa fa-fw fa-heart"></i>
-              </button>
-            </div>
-
-            <div class="gif-preview">
-              <img class="thumbnail" src="icons/giphy.gif" alt="" />
-              <button class="like-btn">
-                <i class="fa fa-fw fa-heart"></i>
-              </button>
-            </div>
-
-            <div class="gif-preview">
-              <img class="thumbnail" src="icons/giphy.gif" />
-              <button class="like-btn">
-                <i class="fa fa-fw fa-heart"></i>
-              </button>
-            </div>
-
-            <div class="gif-preview">
-              <img class="thumbnail" src="icons/giphy.gif" alt="" />
-              <button class="like-btn">
-                <i class="fa fa-fw fa-heart"></i>
-              </button>
-            </div>
-
-            <div class="gif-preview">
-              <img class="thumbnail" src="icons/giphy.gif" alt="" />
-              <button class="like-btn">
-                <i class="fa fa-fw fa-heart"></i>
-              </button>
-            </div>
-
-            <div class="gif-preview">
-              <img class="thumbnail" src="icons/giphy.gif" alt="" />
-              <button class="like-btn">
-                <i class="fa fa-fw fa-heart"></i>
-              </button>
-            </div>
-
-            <div class="gif-preview">
-              <img class="thumbnail" src="icons/giphy.gif" alt="" />
-              <button class="like-btn">
-                <i class="fa fa-fw fa-heart"></i>
-              </button>
-            </div>
-          </section>
-
-          <h1 class="gif-category">Uploads:</h1>
-          <section class="gif-grid">
-            <div class="gif-preview">
-              <img class="thumbnail" src="icons/giphy.gif" alt="" />
-              <button class="like-btn">
-                <i class="fa fa-fw fa-heart"></i>
-              </button>
-            </div>
-
-            <div class="gif-preview">
-              <img class="thumbnail" src="icons/giphy.gif" alt="" />
-              <button class="like-btn">
-                <i class="fa fa-fw fa-heart"></i>
-              </button>
-            </div>
-
-            <div class="gif-preview">
-              <img class="thumbnail" src="icons/giphy.gif" />
-              <button class="like-btn">
-                <i class="fa fa-fw fa-heart"></i>
-              </button>
-            </div>
-
-            <div class="gif-preview">
-              <img class="thumbnail" src="icons/giphy.gif" alt="" />
-              <button class="like-btn">
-                <i class="fa fa-fw fa-heart"></i>
-              </button>
-            </div>
-
-            <div class="gif-preview">
-              <img class="thumbnail" src="icons/giphy.gif" alt="" />
-              <button class="like-btn">
-                <i class="fa fa-fw fa-heart"></i>
-              </button>
-            </div>
-
-            <div class="gif-preview">
-              <img class="thumbnail" src="icons/giphy.gif" alt="" />
-              <button class="like-btn">
-                <i class="fa fa-fw fa-heart"></i>
-              </button>
-            </div>
-
-            <div class="gif-preview">
-              <img class="thumbnail" src="icons/giphy.gif" alt="" />
-              <button class="like-btn">
-                <i class="fa fa-fw fa-heart"></i>
-              </button>
-            </div>
-          </section>
+          <h1 class="gif-category">Editors picks:</h1>
+          <section class="gif-grid" id="editors"></section>
+          <h1 class="gif-category">Trending:</h1>         
+          <section class="gif-grid" id="trending"></section>
+          <h1 class="gif-category">Explore:</h1>
+          <section class="gif-grid" id="explore"></section>        
+          <div class="loader" id="loader">
+          <img src="icons/loader.svg" alt="Loading" />
+          </div>
   `;
   const getTrending = async () => {
     const trendingContainer = q('#trending');
@@ -130,14 +21,12 @@ export const homeView = () => {
       'https://api.giphy.com/v1/gifs/search?api_key=L6yFCUcFk8wlKFtQK3IemTQQd7JLiHv5&q=pixel&limit=14&offset=0&rating=g&lang=en'
     );
 
-    const data1 = await resp1.json();
+    const data = await resp1.json();
 
-    data1.data.map((o) => {
+    data.data.map((o) => {
       const html = generateView(o);
-
       trendingContainer.insertAdjacentHTML('beforeend', html);
     });
-
     getThumbnails();
   };
   getTrending();
@@ -145,17 +34,65 @@ export const homeView = () => {
   const getEditorsPicks = async () => {
     const editorsContainer = q('#editors');
     const resp1 = await fetch(
-      'https://api.giphy.com/v1/gifs/search?api_key=L6yFCUcFk8wlKFtQK3IemTQQd7JLiHv5&q=pixel artists&limit=7&offset=0&rating=g&lang=en'
+      'https://api.giphy.com/v1/gifs/search?api_key=L6yFCUcFk8wlKFtQK3IemTQQd7JLiHv5&q=pixel world&limit=6&offset=0&rating=g&lang=en'
     );
-    const data1 = await resp1.json();
+    const data = await resp1.json();
 
-    data1.data.map((o) => {
+    data.data.map((o) => {
       const editorsPicks = generateView(o);
 
       editorsContainer.insertAdjacentHTML('beforeend', editorsPicks);
     });
-
     getThumbnails();
   };
   getEditorsPicks();
+
+  const getExplore = () => {
+    const exploreContainer = q('#explore');
+    const loader = q('#loader');
+    const body = q('.main');
+    let offset = 0;
+
+    const getGifs = async () => {
+      const resp1 = await fetch(
+        `https://api.giphy.com/v1/gifs/search?api_key=L6yFCUcFk8wlKFtQK3IemTQQd7JLiHv5&q=pixel art&limit=7&offset=${offset}&rating=g&lang=en`
+      );
+      const data = resp1.json();
+
+      return data;
+    };
+
+    const showGifs = async () => {
+      const gifs = await getGifs();
+
+      gifs.data.map((o) => {
+        const html = generateView(o);
+        exploreContainer.insertAdjacentHTML('beforeend', html);
+      });
+
+      getThumbnails();
+    };
+
+    showGifs();
+
+    const showLoading = () => {
+      loader.classList.add('show');
+      setTimeout(() => {
+        loader.classList.remove('show');
+
+        setTimeout(() => {
+          offset = offset + 25;
+          showGifs();
+        }, 1000);
+      }, 3000);
+    };
+
+    body.addEventListener('scroll', () => {
+      const { scrollTop, scrollHeight, clientHeight } = body;
+      if (scrollTop + clientHeight >= scrollHeight - 6) {
+        showLoading();
+      }
+    });
+  };
+  getExplore();
 };

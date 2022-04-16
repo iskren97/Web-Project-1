@@ -1,3 +1,5 @@
+@import "style.css";
+
 .upload-button {
   display: flex;
   justify-content: center;
@@ -17,31 +19,24 @@
   background-color: rgb(47, 64, 79);
 }
 
-.upload-button:hover {
-  background-image: linear-gradient(to top, #9ebada, #2F404F);
-  border: solid 2px #2F404F;
-}
 
-.upload-button:active {
-  background: #2F404F;
-  outline: 0;
-}
+
 
 input::file-selector-button{
   margin-right:1em;
   cursor: pointer;
-  height: 3em;
+  height: 3rem;
   border: none;
   width: auto;
   font-size: 1em;
   font-family: 'Press Start 2P', cursive;
   font-weight: normal;
-
-  color: #fff;
+  color:  var(--font-color);
   text-transform: uppercase;
   background-color: rgb(47, 64, 79);
-
+  transition: 0.25s ease;
 }
+
 
 input[type="file" i] {
   display: flex;
@@ -57,4 +52,14 @@ input[type="file" i] {
   color: rgb(47, 64, 79);
   text-transform: uppercase;
 
+}
+
+
+input[type="file" i] {
+ color: var(--header-color);
+}
+
+input::file-selector-button:hover{
+  color: white;
+  transition: 0.25s ease;
 }
