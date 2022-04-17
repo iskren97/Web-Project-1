@@ -7,6 +7,9 @@
   background-color: var(--font-background-color);
   transition: all 0.5s ease;
   overflow: hidden;
+
+  -webkit-box-shadow: 0px 0px 21px -4px #000000; 
+  box-shadow: 0px 0px 21px -4px #000000;
 }
 .active{
   width: 20em;
@@ -94,7 +97,7 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-content: stretch;
-
+  margin-top: 6px;
 }
 
 .line{

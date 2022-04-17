@@ -6,7 +6,7 @@
 .header {
   padding-top: 20px;
   padding-bottom: 15px;
-  height: 5rem;
+  min-height: 4.45em;
 
   margin-left: 5rem;
   margin-right: 5.5rem;

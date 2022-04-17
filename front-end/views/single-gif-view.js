@@ -14,8 +14,6 @@ const isFavorite = (id) =>{
   }
 }
 
-
-
 export const generateView = (gif) => {
   //generate the gif HTML structure
   const username = gif.username || 'No username';
@@ -35,8 +33,7 @@ export const generateView = (gif) => {
   <p class="gif-info">Title: ${title} </p>
   
   <button class="like-btn">
-  <i class="fa fa-fw fa-heart"></i>
-  Like
+  <i class="fa fa-fw fa-heart"></i>Like
   </button>
   </div>
   ${isFavorite(gif.id)}
