@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint js/index.js"
+    "lint": "eslint views"
   },
   "keywords": [],
   "author": "Telerik Academy",
