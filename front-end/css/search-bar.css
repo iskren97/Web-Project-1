@@ -14,7 +14,9 @@
   height: 1.3em;
   padding: 20px;
   float: left;
-  font: bold 18px "lucida sans", "trebuchet MS", "Tahoma";
+  font-size: 18px;
+  font-family: "Press Start 2P", cursive;
+  font-weight: normal;
   border: none;
   background-color: var(--search-bar-background-color);
   justify-content: space-between;
