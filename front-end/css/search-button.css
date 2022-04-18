@@ -1,20 +1,17 @@
-@import 'style.css';
+@import "style.css";
 
 /* search button styles */
 .search-button {
   display: flex;
   justify-content: center;
   align-items: center;
-
   cursor: pointer;
   height: 4rem;
   width: 8rem;
   border: none;
-
   font-size: 1rem;
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
   font-weight: normal;
-
   color: var(--search-button-color);
   text-transform: uppercase;
   background-color: #2f404f;
@@ -28,5 +25,4 @@
 
 .search-button:active {
   font-size: 0.85rem;
-
 }

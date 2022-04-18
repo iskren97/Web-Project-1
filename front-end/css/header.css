@@ -1,35 +1,26 @@
 @import "style.css";
 
-/* left section -> от flexbox-a лявата му част, която държи заглавието в случая */
-
 /* header styles */
 .header {
   padding-top: 20px;
   padding-bottom: 15px;
   min-height: 4.45em;
-
   margin-left: 5rem;
   margin-right: 5.5rem;
-
   display: flex;
   align-content: space-around;
   justify-content: space-between;
-
   align-items: center;
-
   flex-direction: row;
-
   background-color: var(--content-background-color);
 }
 
 /* h1 styles -> site name*/
 .header h1 {
-  /* vw === ViewPoint, resize-ва се при промяна page-a, което прави самия текст responsive */
   font-size: 3.5vw;
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
   font-weight: normal;
   margin: 0;
-  /* тук надолу са цветовете на заглавието */
 
   background-image: linear-gradient(
     225deg,
@@ -65,5 +56,5 @@
   overflow: hidden;
   border-bottom: dashed;
 
-  transition: .25s ease;
+  transition: 0.25s ease;
 }

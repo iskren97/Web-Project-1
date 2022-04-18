@@ -1,21 +1,19 @@
 /* main styles */
 
 body {
-  /* This style below will be inherited */
-
   margin: 0;
 }
-html {
-  scroll-behavior: smooth;
-}
+
 :root {
   --font-color: #c7dad3;
   --font-background-color: #2f404f;
   --content-background: white;
   --header-color: #2f404f;
   --header-border-color: black;
-  --sidebar-icon-color: invert(93%) sepia(12%) saturate(197%) hue-rotate(106deg) brightness(92%) contrast(88%);
-  --sidebar-icon-color-hover: invert(20%) sepia(19%) saturate(944%) hue-rotate(166deg) brightness(95%) contrast(86%) ;
+  --sidebar-icon-color: invert(93%) sepia(12%) saturate(197%) hue-rotate(106deg)
+    brightness(92%) contrast(88%);
+  --sidebar-icon-color-hover: invert(20%) sepia(19%) saturate(944%)
+    hue-rotate(166deg) brightness(95%) contrast(86%);
   --search-bar-background-color: rgb(207, 216, 226);
   --gradient-color1: #201261;
   --gradient-color2: #203886;
@@ -23,7 +21,6 @@ html {
   --gradient-color4: #88addf;
   --search-button-color: white;
   --file-upload-text-color: #2f404f;
-
 }
 
 .container {

@@ -1,39 +1,37 @@
-import { q } from '../helpers/helpers.js';
-import { getFavorites } from '../helpers/favorites.js';
-import { generateView } from './single-gif-view.js';
-import { getThumbnails } from '../helpers/thumbnails.js';
+import { q, create } from "../helpers/helpers.js";
+import { getFavorites } from "../helpers/favorites.js";
+import { generateView } from "./single-gif-view.js";
+import { getThumbnails } from "../helpers/thumbnails.js";
+import { request } from "../helpers/fetch.js";
+
 export const favoritesView = async () => {
-  const main = q('main');
-  main.innerHTML = '';
+  const main = q("main");
+  main.innerHTML = "";
 
-  const arrOfFavorite = getFavorites();
-
-  const containerTitle = document.createElement('h1');
-  containerTitle.innerHTML = 'Favorite GIFs:';
-  containerTitle.className = 'gif-category';
-
-  const container = document.createElement('section');
-  container.id = 'favorites-section';
+  const containerTitle = create("h1");
+  containerTitle.innerHTML = "Favorite GIFs:";
+  containerTitle.className = "gif-category";
   main.appendChild(containerTitle);
+
+  const container = create("section");
+  container.id = "favorites-section";
   main.appendChild(container);
 
+  const arrOfFavorite = getFavorites();
   if (arrOfFavorite.length === 0) {
     container.innerHTML =
       '<p class="gif-category">Add some GiFs to favorites to see them here!</p>';
   } else {
-    container.className = 'gif-grid';
+    container.className = "gif-grid";
 
     const favorite = arrOfFavorite.toString();
 
-    // use get gifs by id endpoint for all of the uploads
-    const response = await fetch(
+    const resultData = await request(
       `https://api.giphy.com/v1/gifs?api_key=L6yFCUcFk8wlKFtQK3IemTQQd7JLiHv5&ids=${favorite}`
     );
-    const resultData = await response.json();
 
     resultData.data.map((o) => {
-      const html = generateView(o);
-      container.insertAdjacentHTML('beforeend', html);
+      container.insertAdjacentHTML("beforeend", generateView(o));
     });
 
     getThumbnails();

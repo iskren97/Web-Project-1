@@ -1,4 +1,4 @@
-@import 'style.css';
+@import "style.css";
 
 .gif-grid {
   display: grid;
@@ -13,7 +13,7 @@
 .thumbnail-row {
   opacity: 0;
   display: flex;
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
   font-weight: normal;
   background-color: rgba(0, 0, 0, 0.8);
   color: white;
@@ -26,8 +26,6 @@
   justify-content: space-between;
   align-items: flex-start;
   transition: 0.3s;
-
-  
 }
 
 .thumbnail-row p {
@@ -48,18 +46,17 @@
   height: 15em;
   object-fit: cover;
   transition: 0.15s;
-  -webkit-box-shadow: 0px 0px 21px -4px #000000; 
+  -webkit-box-shadow: 0px 0px 21px -4px #000000;
   box-shadow: 0px 0px 21px -4px #000000;
 }
 
 .gif-category {
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
   font-size: 1.75em;
   margin-left: 5rem;
   margin-top: 1.25em;
   color: var(--header-color);
   transition: 0.5s ease;
-  
 }
 
 .gif-preview {
@@ -67,7 +64,6 @@
   width: 100%;
   max-width: 15em;
   height: 15.22em;
-  
 }
 
 .like-btn {
@@ -76,7 +72,7 @@
   font-size: 1.2em;
   cursor: pointer;
   border: none;
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
 }
 
 .like-btn:hover {

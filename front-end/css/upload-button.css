@@ -4,13 +4,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
   cursor: pointer;
   height: 4rem;
   border: none;
-
   font-size: 16px;
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
   font-weight: normal;
   margin-top: 2rem;
   margin-left: 5rem;
@@ -19,24 +17,20 @@
   background-color: rgb(47, 64, 79);
 }
 
-
-
-
-input::file-selector-button{
-  margin-right:1em;
+input::file-selector-button {
+  margin-right: 1em;
   cursor: pointer;
   height: 3rem;
   border: none;
   width: auto;
   font-size: 1em;
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
   font-weight: normal;
-  color:  var(--font-color);
+  color: var(--font-color);
   text-transform: uppercase;
   background-color: rgb(47, 64, 79);
   transition: 0.25s ease;
 }
-
 
 input[type="file" i] {
   display: flex;
@@ -45,21 +39,19 @@ input[type="file" i] {
   border: none;
   width: auto;
   font-size: 16px;
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
   font-weight: normal;
   margin-top: 2rem;
   margin-left: 5rem;
   color: rgb(47, 64, 79);
   text-transform: uppercase;
-
 }
-
 
 input[type="file" i] {
- color: var(--header-color);
+  color: var(--header-color);
 }
 
-input::file-selector-button:hover{
+input::file-selector-button:hover {
   color: white;
   transition: 0.25s ease;
 }

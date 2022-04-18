@@ -1,8 +1,9 @@
-import { q } from '../helpers/helpers.js';
-import { getThumbnails } from '../helpers/thumbnails.js';
-import { generateView } from './single-gif-view.js';
+import { q } from "../helpers/helpers.js";
+import { getThumbnails } from "../helpers/thumbnails.js";
+import { generateView } from "./single-gif-view.js";
+import { request } from "../helpers/fetch.js";
 export const homeView = () => {
-  const main = q('main');
+  const main = q("main");
 
   main.innerHTML = `
           <h1 class="gif-category">Editors picks:</h1>
@@ -12,62 +13,47 @@ export const homeView = () => {
           <h1 class="gif-category">Explore:</h1>
           <section class="gif-grid" id="explore"></section>        
           <div class="loader" id="loader">
-          <img src="icons/loader.svg" alt="Loading" />
+            <img src="icons/loader.svg" alt="Loading" />
           </div>
   `;
-  const getTrending = async () => {
-    const trendingContainer = q('#trending');
-    const resp1 = await fetch(
-      'https://api.giphy.com/v1/gifs/search?api_key=L6yFCUcFk8wlKFtQK3IemTQQd7JLiHv5&q=pixel&limit=12&offset=0&rating=g&lang=en'
+
+  (async () => {
+    const editorsContainer = q("#editors");
+    const resultData = await request(
+      "https://api.giphy.com/v1/gifs/search?api_key=L6yFCUcFk8wlKFtQK3IemTQQd7JLiHv5&q=pixel world&limit=6&offset=0&rating=g&lang=en"
     );
 
-    const data = await resp1.json();
-
-    data.data.map((o) => {
-      const html = generateView(o);
-      trendingContainer.insertAdjacentHTML('beforeend', html);
+    resultData.data.map((o) => {
+      editorsContainer.insertAdjacentHTML("beforeend", generateView(o));
     });
     getThumbnails();
-  };
-  getTrending();
+  })();
 
-  const getEditorsPicks = async () => {
-    const editorsContainer = q('#editors');
-    const resp1 = await fetch(
-      'https://api.giphy.com/v1/gifs/search?api_key=L6yFCUcFk8wlKFtQK3IemTQQd7JLiHv5&q=pixel world&limit=6&offset=0&rating=g&lang=en'
+  (async () => {
+    const trendingContainer = q("#trending");
+    const resultData = await request(
+      "https://api.giphy.com/v1/gifs/search?api_key=L6yFCUcFk8wlKFtQK3IemTQQd7JLiHv5&q=pixel&limit=12&offset=0&rating=g&lang=en"
     );
-    const data = await resp1.json();
 
-    data.data.map((o) => {
-      const editorsPicks = generateView(o);
-
-      editorsContainer.insertAdjacentHTML('beforeend', editorsPicks);
+    resultData.data.map((o) => {
+      trendingContainer.insertAdjacentHTML("beforeend", generateView(o));
     });
     getThumbnails();
-  };
-  getEditorsPicks();
+  })();
 
-  const getExplore = () => {
-    const exploreContainer = q('#explore');
-    const loader = q('#loader');
-    const body = q('.main');
+  (() => {
+    const exploreContainer = q("#explore");
+    const loader = q("#loader");
+    const body = q(".main");
     let offset = 0;
 
-    const getGifs = async () => {
-      const resp1 = await fetch(
+    const showGifs = async () => {
+      const gifs = await request(
         `https://api.giphy.com/v1/gifs/search?api_key=L6yFCUcFk8wlKFtQK3IemTQQd7JLiHv5&q=pixel art&limit=12&offset=${offset}&rating=g&lang=en`
       );
-      const data = resp1.json();
-
-      return data;
-    };
-
-    const showGifs = async () => {
-      const gifs = await getGifs();
 
       gifs.data.map((o) => {
-        const html = generateView(o);
-        exploreContainer.insertAdjacentHTML('beforeend', html);
+        exploreContainer.insertAdjacentHTML("beforeend", generateView(o));
       });
 
       getThumbnails();
@@ -76,23 +62,22 @@ export const homeView = () => {
     showGifs();
 
     const showLoading = () => {
-      loader.classList.add('show');
+      loader.classList.add("show");
       setTimeout(() => {
-        loader.classList.remove('show');
+        loader.classList.remove("show");
 
         setTimeout(() => {
-          offset = offset + 25;
+          offset += 25;
           showGifs();
         }, 1000);
       }, 3000);
     };
 
-    body.addEventListener('scroll', () => {
+    body.addEventListener("scroll", () => {
       const { scrollTop, scrollHeight, clientHeight } = body;
       if (scrollTop + clientHeight >= scrollHeight - 6) {
         showLoading();
       }
     });
-  };
-  getExplore();
+  })();
 };

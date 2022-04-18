@@ -1,31 +1,31 @@
-import { q } from "../helpers/helpers.js";
+import { q, create } from "../helpers/helpers.js";
 import { addUpload } from "../helpers/uploads.js";
 
 export const uploadView = () => {
   const main = q("main");
   main.innerHTML = "";
 
-  const container = document.createElement("section");
+  const container = create("section");
   container.className = "gif-grid";
 
-  const containerTitle = document.createElement("h1");
+  const containerTitle = create("h1");
   containerTitle.innerHTML = "Upload a GIF:";
   containerTitle.className = "gif-category";
 
   main.appendChild(containerTitle);
 
-  const inputField = document.createElement("input");
+  const inputField = create("input");
   inputField.type = "file";
   inputField.id = "fileInput";
   inputField.className = "upload-input";
   inputField.accept = ".gif";
   main.appendChild(inputField);
 
-  const responseMsg = document.createElement("h1");
+  const responseMsg = create("h1");
   responseMsg.className = "gif-category";
   main.appendChild(responseMsg);
 
-  const fileInput = document.querySelector("#fileInput");
+  const fileInput = q("#fileInput");
 
   const uploadFile = (file) => {
     responseMsg.innerHTML = "Uploading a GIF...";
@@ -38,7 +38,7 @@ export const uploadView = () => {
       request.open("POST", API_ENDPOINT, true);
       request.onreadystatechange = () => {
         if (request.readyState === 4 && request.status === 200) {
-          let response = JSON.parse(request.responseText);
+          const response = JSON.parse(request.responseText);
           addUpload(response.data.id);
           responseMsg.innerHTML = "File uploaded successfully!";
         }
