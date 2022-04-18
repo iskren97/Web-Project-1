@@ -4,6 +4,9 @@ import { getThumbnails } from '../helpers/thumbnails.js';
 import { generateView } from './single-gif-view.js';
 import { request } from '../helpers/fetch.js';
 
+/**
+ * Generates the upload view.
+ */
 export const uploadsView = async () => {
   const main = q('main');
   main.innerHTML = '';
@@ -13,7 +16,7 @@ export const uploadsView = async () => {
   if (uploads === '') {
     // Display that no gifs are here
     const message = create('h1');
-    message.innerHTML = 'Error 404: You have no uploads to show';
+    message.innerHTML = 'You have no uploads to show!';
     message.className = 'gif-category';
     main.appendChild(message);
   } else {

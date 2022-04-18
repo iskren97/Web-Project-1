@@ -2,6 +2,10 @@ import { q } from '../helpers/helpers.js';
 import { getThumbnails } from '../helpers/thumbnails.js';
 import { generateView } from './single-gif-view.js';
 import { request } from '../helpers/fetch.js';
+
+/**
+ * Generates the home view.
+ */
 export const homeView = () => {
   const main = q('main');
 

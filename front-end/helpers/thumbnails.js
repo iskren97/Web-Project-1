@@ -1,6 +1,10 @@
 import { qAll } from './helpers.js';
 import { addFavorite, removeFavorite, getFavorites } from './favorites.js';
 import { favoritesView } from '../views/favorites-view.js';
+
+/**
+ * Displays gif details on hover.
+ */
 export const getThumbnails = () => {
   const gifThumbnails = qAll('.gif-preview');
   const favorites = getFavorites();
@@ -30,13 +34,11 @@ export const getThumbnails = () => {
 
   Array.from(button).forEach((likeButton) => {
     likeButton.addEventListener('click', () => {
-      const gifId
-        = likeButton.parentElement.parentElement.attributes[1].nodeValue;
+      const gifId = likeButton.parentElement.parentElement.attributes[1].nodeValue;
       if (favorites.includes(gifId)) {
         removeFavorite(gifId);
         if (
-          likeButton.parentNode.parentElement.parentElement.id
-          === 'favorites-section'
+          likeButton.parentNode.parentElement.parentElement.id === 'favorites-section'
         ) {
           favoritesView();
         }

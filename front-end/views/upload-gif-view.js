@@ -1,6 +1,9 @@
 import { q, create } from '../helpers/helpers.js';
 import { addUpload } from '../helpers/uploads.js';
 
+/**
+ * Generates the upload-gif view.
+ */
 export const uploadView = () => {
   const main = q('main');
   main.innerHTML = '';

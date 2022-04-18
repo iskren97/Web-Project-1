@@ -5,6 +5,9 @@ import { favoritesView } from '../views/favorites-view.js';
 import { uploadView } from '../views/upload-gif-view.js';
 import { q, qAll } from '../helpers/helpers.js';
 
+/**
+ * Contains all of the functionality of the sidebar/navbar.
+ */
 export const sideBarLogic = () => {
   const sidebar = q('.sidebar');
   const sidebarElements = Array.from(qAll('.sidebar-element'));

@@ -4,6 +4,9 @@ import { generateView } from './single-gif-view.js';
 import { getThumbnails } from '../helpers/thumbnails.js';
 import { request } from '../helpers/fetch.js';
 
+/**
+ * Generates the favorites view.
+ */
 export const favoritesView = async () => {
   const main = q('main');
   main.innerHTML = '';

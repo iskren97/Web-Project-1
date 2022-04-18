@@ -1,5 +1,10 @@
 import { getFavorites } from '../helpers/favorites.js';
 
+/**
+ * Check if a gif is in favorites.
+ * @param {String} id The id of the gif.
+ * @return {String} Template.
+ */
 const isFavorite = (id) => {
   const currentFavorites = getFavorites();
 
@@ -12,6 +17,11 @@ const isFavorite = (id) => {
     : '';
 };
 
+/**
+ * Generates the single gif template.
+ * @param {Object} gif The object from the api data.
+ * @return {String} Template string.
+ */
 export const generateView = (gif) => {
   // generate the GIF HTML structure
 

@@ -3,6 +3,10 @@ import { getThumbnails } from '../helpers/thumbnails.js';
 import { generateView } from './single-gif-view.js';
 import { request } from '../helpers/fetch.js';
 
+
+/**
+ * Generates the search view.
+ */
 export const searchView = () => {
   const main = q('main');
   const searchBtn = q('#searchBtn');
@@ -15,7 +19,7 @@ export const searchView = () => {
     if (searchValue === '') {
       const message = create('h1');
 
-      message.innerHTML = 'Please enter a valid search term';
+      message.innerHTML = 'Please enter a valid search term!';
       message.className = 'gif-category';
       main.appendChild(message);
 

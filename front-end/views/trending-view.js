@@ -3,6 +3,9 @@ import { getThumbnails } from '../helpers/thumbnails.js';
 import { generateView } from './single-gif-view.js';
 import { request } from '../helpers/fetch.js';
 
+/**
+ * Generates the trending view.
+ */
 export const trendingView = () => {
   const main = q('main');
   main.innerHTML = '';
