@@ -4,34 +4,35 @@ import { uploadsView} from "../views/uploads-view.js"
 import { favoritesView} from "../views/favorites-view.js"
 import { uploadView} from "../views/upload-gif-view.js"
 
-let btn = document.querySelector("#hamburger-btn");
+
+export const sideBarLogic = () => {
+
 let sidebar = document.querySelector(".sidebar");
 let sidebarElements = Array.from(document.querySelectorAll(".sidebar-element"))
 let darkModeButton = document.querySelector("#darkModeToggle")
-let toggleButton = document.querySelector("#darkModeCheckbox")
 let main = document.querySelector(".main")
 
 
 sidebarElements.map(e=>{
     e.addEventListener("click", function(){
-        if(e?.attributes[1]?.nodeValue == "toggle-button"){
+        if(e.id == "toggle-button"){
         sidebar.classList.toggle("active")
         }
 
-        if(e?.attributes[1]?.nodeValue == "trendingId"){
+        if(e.id == "trendingId"){
           trendingView();
         }
 
-        if(e?.attributes[1]?.nodeValue == "homeId"){
+        if(e.id == "homeId"){
           homeView();
         }
-        if(e?.attributes[1]?.nodeValue == "favoritesId"){
+        if(e.id == "favoritesId"){
           favoritesView();
         }
-        if(e?.attributes[1]?.nodeValue == "myUploadsId"){
+        if(e.id == "myUploadsId"){
           uploadsView();
         }
-        if(e?.attributes[1]?.nodeValue == "uploadGifId"){
+        if(e.id == "uploadGifId"){
           uploadView();
         }
     })
@@ -90,22 +91,7 @@ darkModeButton.addEventListener("click", function(){
     r.style.setProperty('--gradient-color4', '#88addf');
     r.style.setProperty('--search-button-color', 'white');
 
-
-
-
-
-
   }
 })
 
-
-
-
-
-document.addEventListener('DOMContentLoaded', function() {
-
-  console.log("READY")
-
-
-
-})
+}
