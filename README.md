@@ -8,7 +8,7 @@
 
 The application focus lays on the **pixel world of gifs**, which makes it not an ordinary one.
 
-For the build we used pure **HTML**, **JS** and **CSS**, of course.
+For the build we used pure **HTML**, **CSS** and **JS** , of course.
 
 There aren't any external libraries, because as this being our first shot in the project making, we tried to get the most out of the languages.
 
