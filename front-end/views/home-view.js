@@ -24,7 +24,7 @@ export const homeView = () => {
   (async () => {
     const editorsContainer = q('#editors');
     const resultData = await request(
-      'https://api.giphy.com/v1/gifs/search?api_key=L6yFCUcFk8wlKFtQK3IemTQQd7JLiHv5&q=pixel world&limit=6&offset=0&rating=g&lang=en'
+      'https://api.giphy.com/v1/gifs/search?api_key=L6yFCUcFk8wlKFtQK3IemTQQd7JLiHv5&q=pixel vibe&limit=6&offset=0&rating=g&lang=en'
     );
 
     resultData.data.map((o) => {
